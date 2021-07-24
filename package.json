@@ -1,0 +1,18 @@
+{
+  "name": "js-patterns",
+  "version": "1.0.0",
+  "description": "JS studying time",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "fmsb",
+    "js"
+  ],
+  "author": "fmsb",
+  "license": "MIT",
+  "devDependencies": {
+    "jest": "^27.0.6"
+  }
+}
