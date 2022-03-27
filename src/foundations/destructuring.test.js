@@ -1,7 +1,7 @@
 
 describe('destructuring', () => {
   it('should destruct [, a, b] = [10, 20]', () => {
-    const [,a, b] = [10, 20];
+    const [, a, b] = [10, 20];
     expect(a).toEqual(20);
     expect(b).toEqual(undefined);
   });
