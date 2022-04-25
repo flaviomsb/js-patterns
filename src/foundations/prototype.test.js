@@ -13,8 +13,9 @@ describe('User prototype', () => {
 
   test('user info show', () => {
     expect(user.show()).toEqual(
-`first: John
+      `first: John
 last: Doe
-email: johndoe@email.com`);
+email: johndoe@email.com`,
+    );
   });
 });

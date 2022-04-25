@@ -1,4 +1,3 @@
-
 describe('destructuring', () => {
   it('should destruct [, a, b] = [10, 20]', () => {
     const [, a, b] = [10, 20];
@@ -7,7 +6,9 @@ describe('destructuring', () => {
   });
 
   it('should destruct { b, ...rest } = { a: 10, b: 20, c: 89, d: "__wsd" }', () => {
-    const { b, ...rest } = { a: 10, b: 20, c: 89, d: '__wsd' };
+    const { b, ...rest } = {
+      a: 10, b: 20, c: 89, d: '__wsd',
+    };
     expect(b).toEqual(20);
     expect(rest).toEqual({ a: 10, c: 89, d: '__wsd' });
   });

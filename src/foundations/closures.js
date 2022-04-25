@@ -1,8 +1,5 @@
-
 export function sum(x) {
-  return function (y) {
-    return x + y;
-  };
+  return (y) => x + y;
 }
 
 // Closure simmulating private methods
@@ -11,9 +8,10 @@ export function cart({
   tax = 9.8,
   shipping = 2.5,
   locale = 'en-US',
-  currency = 'USD'
+  currency = 'USD',
 } = {}) {
-  let taxed, shipped = false;
+  let taxed; let
+    shipped = false;
   let total = subTotal;
 
   function addUp(percent) {
@@ -28,7 +26,7 @@ export function cart({
   }
 
   return {
-    applyTax: function () {
+    applyTax() {
       if (!taxed) {
         addUp(tax);
         taxed = true;
@@ -37,7 +35,7 @@ export function cart({
       return this;
     },
 
-    ship: function () {
+    ship() {
       if (!shipped) {
         addUp(shipping);
         shipped = true;
@@ -46,7 +44,7 @@ export function cart({
       return this;
     },
 
-    grandTotal: function () {
+    grandTotal() {
       this.applyTax();
       this.ship();
 

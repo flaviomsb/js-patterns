@@ -4,7 +4,9 @@
   "description": "JS studying time",
   "main": "index.js",
   "scripts": {
-    "test": "jest"
+    "test": "jest",
+    "lint": "eslint --cache --ext .js,.json --format node_modules/eslint-formatter-pretty src",
+    "lint:fix": "eslint --fix --cache --ext .js,.jsx,.json --format node_modules/eslint-formatter-pretty src"
   },
   "keywords": [
     "fmsb",
@@ -17,6 +19,24 @@
     "@babel/plugin-transform-modules-commonjs": "^7.15.0",
     "@types/jest": "^27.0.1",
     "babel-jest": "^27.0.6",
-    "jest": "^27.0.6"
+    "eslint": "^8.14.0",
+    "eslint-config-airbnb-base": "^15.0.0",
+    "eslint-formatter-pretty": "^4.1.0",
+    "eslint-plugin-import": "^2.26.0",
+    "eslint-plugin-prettier": "^4.0.0",
+    "jest": "^27.0.6",
+    "prettier": "^2.6.2"
+  },
+  "dependencies": {
+    "lodash.capitalize": "^4.2.1"
+  },
+  "prettier": {
+    "singleQuote": true
+  },
+  "eslintConfig": {
+    "extends": [
+      "airbnb",
+      "plugin:prettier/recommended"
+    ]
   }
 }

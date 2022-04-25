@@ -8,9 +8,9 @@ describe('apply', () => {
       name: 'Jeffrey Doe',
     };
 
-    const greet = function (city) {
+    function greet(city) {
       return `Hi ${this.name}, welcome to ${city}!`;
-    };
+    }
 
     expect(greet.apply(userA, ['Austin'])).toEqual('Hi John Doe, welcome to Austin!');
     expect(greet.apply(userB, ['Mexico City'])).toEqual('Hi Jeffrey Doe, welcome to Mexico City!');
@@ -27,20 +27,20 @@ describe('call', () => {
       tax: 8.9,
     };
 
-    const calcFee = function (amount, locale, currency) {
+    function calculateFee(amount, locale, currency) {
       return Intl.NumberFormat(locale, { style: 'currency', currency }).format(amount * (this.tax / 100));
-    };
+    }
 
-    expect(calcFee.call(usa, 123.75, 'en-US', 'USD')).toEqual('$12.99');
-    expect(calcFee.call(japan, 123.75, 'ja-JP', 'JPY')).toEqual('￥11');
+    expect(calculateFee.call(usa, 123.75, 'en-US', 'USD')).toEqual('$12.99');
+    expect(calculateFee.call(japan, 123.75, 'ja-JP', 'JPY')).toEqual('￥11');
   });
 });
 
 describe('bind', () => {
   describe('must differentiate contexts', () => {
-    const printLocation = function () {
+    function printLocation() {
       return `You are in ${this.city}`;
-    };
+    }
 
     const position1 = {
       city: 'Brussels',

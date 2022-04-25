@@ -1,7 +1,6 @@
-
-const User = function(data) {
+function User(data) {
   this.data = data;
-};
+}
 
 export const userInfo = {
   show() {
