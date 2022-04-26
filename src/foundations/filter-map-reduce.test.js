@@ -1,5 +1,5 @@
 import {
-  users, isMale, isFemale, getAddress, getFullName,
+  users, isMale, isFemale, getAddress, getFullName, mockSalary,
 } from './users';
 
 describe('Filter, Map and Reduce', () => {
@@ -27,5 +27,17 @@ describe('Filter, Map and Reduce', () => {
 
     expect(maleCount > 0 && maleCount < usersCount).toBeTruthy();
     expect(femaleCount > 0 && femaleCount < usersCount).toBeTruthy();
+  });
+
+  test('reduce executes a user-supplied "reducer" callback function on each element of the array', () => {
+    const min = 85000;
+    const max = 197239;
+    const salariesTotal = users
+      .map((user) => ({ ...user, salary: mockSalary({ min, max }) }))
+      .reduce((previous, { salary }) => previous + salary, 0);
+
+    expect(salariesTotal).not.toBeNaN();
+    expect(salariesTotal).toBeGreaterThan(users.length * min);
+    expect(salariesTotal).toBeLessThan(users.length * max);
   });
 });

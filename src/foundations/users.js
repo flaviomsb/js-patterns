@@ -1,13 +1,14 @@
 import capitalize from 'lodash.capitalize';
 
 const isOfGender = ({ gender }, wantedGender) => gender === wantedGender;
-const capitalizeWords = (words) => words.map((word) => capitalize(word));
+const capitalizeWords = (...words) => words.map((word) => capitalize(word));
 
 export const isMale = (user) => isOfGender(user, 'male');
 export const isFemale = (user) => isOfGender(user, 'female');
 
-export const getFullName = ({ first_name: first, last_name: last, title }) => ({ fullName: capitalizeWords([title, first, last]).join(' ') });
+export const getFullName = ({ first_name: first, last_name: last, title }) => ({ fullName: capitalizeWords(title, first, last).join(' ') });
 export const getAddress = ({ location }) => ({ address: Object.entries(location).map(([, val]) => capitalize(val)).join(', ') });
+export const mockSalary = ({ min, max }) => Math.ceil(Math.random() * (max - min) + min);
 
 export const users = [
   {

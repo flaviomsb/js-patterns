@@ -12,7 +12,9 @@ function SafeAddress(info) {
 function SafeAddressPattern(info) {
   if (this instanceof SafeAddressPattern) {
     this.info = info;
-    this.printInfo = () => console.log(this.info);
+    this.printInfo = () => {
+      console.log(this.info);
+    };
   } else {
     return new SafeAddressPattern(info);
   }
