@@ -15,5 +15,6 @@ module.exports = {
     'consistent-return': 1,
     'no-console': 0,
     'no-restricted-syntax': 1,
+    'no-plusplus': 0,
   },
 };
