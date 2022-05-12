@@ -1,5 +1,5 @@
-import LinkedList from './linked-list';
-import Node from './node';
+import LinkedList from './LinkedList';
+import Node from './Node';
 
 describe('Linked list', () => {
   describe('constructor', () => {
