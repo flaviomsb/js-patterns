@@ -12,11 +12,7 @@ class LinkedList {
     this.tail = null;
 
     if (value) {
-      if (Array.isArray(value)) {
-        this.fromArray(value);
-      } else {
-        this.push(value);
-      }
+      this.push(value);
     }
   }
 

@@ -218,7 +218,8 @@ describe('Linked list', () => {
   });
 
   describe('insert', () => {
-    const linkedList = new LinkedList(['Austin', 'Dallas', 'El Paso']);
+    const linkedList = new LinkedList();
+    linkedList.fromArray(['Austin', 'Dallas', 'El Paso']);
 
     test('when inserting at valid index', () => {
       expect(linkedList.length).toBe(3);
@@ -236,7 +237,8 @@ describe('Linked list', () => {
   });
 
   describe('remove', () => {
-    const linkedList = new LinkedList(['John', 'Homer', 'Paul']);
+    const linkedList = new LinkedList();
+    linkedList.fromArray(['John', 'Homer', 'Paul']);
 
     test('when removing with a valid index', () => {
       const toRemove = { value: 'Paul' };
@@ -254,7 +256,8 @@ describe('Linked list', () => {
 
   describe('reverse', () => {
     test('when list has two or more nodes', () => {
-      const linkedList = new LinkedList(['Texas', 'Montana', 'North Dakota']);
+      const linkedList = new LinkedList();
+      linkedList.fromArray(['Texas', 'Montana', 'North Dakota']);
 
       expect(linkedList.head).toMatchObject({
         value: 'Texas',

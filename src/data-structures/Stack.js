@@ -10,13 +10,7 @@ class Stack {
     this.length = 0;
 
     if (value) {
-      if (Array.isArray(value)) {
-        this.fromArray(value);
-      } else {
-        const node = new Node(value);
-        this.top = node;
-        this.length = 1;
-      }
+      this.push(value);
     }
   }
 
