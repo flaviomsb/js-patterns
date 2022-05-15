@@ -70,4 +70,24 @@ describe('BsTree', () => {
       expect(tree.contains(78)).toBeTruthy();
     });
   });
+
+  describe('min', () => {
+    test('when tree has only one node, root must be the mininum value', () => {
+      const tree = new BsTree();
+      tree.insert(15);
+      expect(tree.min()).toMatchObject(tree.root);
+    });
+
+    test('when tree many nodes', () => {
+      const tree = BsTree.fromValues(46, 28, 48, 12, 4, 5, 90);
+
+      expect(tree.min()).toMatchObject({ value: 4 });
+    });
+
+    test('when a current node is passed', () => {
+      const tree = BsTree.fromValues(9, 43, 89, 23, 1, 25, 7);
+
+      expect(tree.min(tree.root.right)).toMatchObject({ value: 23 });
+    });
+  });
 });

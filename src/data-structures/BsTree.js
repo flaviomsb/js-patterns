@@ -64,6 +64,21 @@ class BsTree {
   }
 
   /**
+   * Return the node with minimum value for the given current node
+   * @param {NodeLeftRight} current
+   * @returns {NodeLeftRight}
+   */
+  min(current = null) {
+    let node = current ?? this.root;
+
+    while (node.left != null) {
+      node = node.left;
+    }
+
+    return node;
+  }
+
+  /**
    * Insert multiple values into the tree
    * @param {Array} values
    * @returns {BsTree}
