@@ -31,8 +31,7 @@ describe('Doubly Linked List', () => {
   });
 
   describe('pop', () => {
-    const doublyLinkedList = new DoublyLinkedList();
-    doublyLinkedList.fromArray([1000, 2000]);
+    const doublyLinkedList = DoublyLinkedList.fromValues(1000, 2000);
 
     test.each([
       [2, 1, { value: 2000 }],
@@ -46,9 +45,8 @@ describe('Doubly Linked List', () => {
     });
   });
 
-  test('unshift', () => {
-    const doublyLinkedList = new DoublyLinkedList();
-    doublyLinkedList.fromArray(['Jessica', 'Jonathan']);
+  test('shift', () => {
+    const doublyLinkedList = DoublyLinkedList.fromValues('Jessica', 'Jonathan');
 
     expect(doublyLinkedList.length).toBe(2);
 
@@ -74,8 +72,7 @@ describe('Doubly Linked List', () => {
   });
 
   describe('get', () => {
-    const doublyLinkedList = new DoublyLinkedList();
-    doublyLinkedList.fromArray(['John', 'Rick', 'Terrence']);
+    const doublyLinkedList = DoublyLinkedList.fromValues('John', 'Rick', 'Terrence');
 
     test('when passing a valid index', () => {
       let node = doublyLinkedList.get(2);
@@ -107,8 +104,7 @@ describe('Doubly Linked List', () => {
   });
 
   describe('insert', () => {
-    const doublyLinkedList = new DoublyLinkedList();
-    doublyLinkedList.fromArray(['Austin', 'Dallas', 'El Paso']);
+    const doublyLinkedList = DoublyLinkedList.fromValues('Austin', 'Dallas', 'El Paso');
 
     test('when inserting at valid index', () => {
       expect(doublyLinkedList.length).toBe(3);
@@ -142,8 +138,7 @@ describe('Doubly Linked List', () => {
   });
 
   describe('remove', () => {
-    const doublyLinkedList = new DoublyLinkedList();
-    doublyLinkedList.fromArray(['John', 'Homer', 'Paul']);
+    const doublyLinkedList = DoublyLinkedList.fromValues('John', 'Homer', 'Paul');
 
     test('when removing with a valid index', () => {
       const toRemove = { value: 'Homer' };

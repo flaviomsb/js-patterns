@@ -1,4 +1,4 @@
-import Node from './Node';
+import NodeNext from './NodeNext';
 
 class Queue {
   /**
@@ -21,14 +21,14 @@ class Queue {
    * @returns {Queue}
    */
   enqueue(value) {
-    const node = new Node(value);
+    const newNode = new NodeNext(value);
 
     if (!this.length) {
-      this.first = node;
-      this.last = node;
+      this.first = newNode;
+      this.last = newNode;
     } else {
-      this.last.next = node;
-      this.last = node;
+      this.last.next = newNode;
+      this.last = newNode;
     }
 
     this.length++;
@@ -38,7 +38,7 @@ class Queue {
 
   /**
    * Remove the node from the front of the queue
-   * @returns {(Node|undefined)}
+   * @returns {(NodeNext|undefined)}
    */
   dequeue() {
     if (!this.length) return undefined;
@@ -58,11 +58,14 @@ class Queue {
   }
 
   /**
-   * Push elements of an array into the queue
-   * @param {Array} arr
+   * Make Stack from passed arguments
+   * @param  {Array} values
+   * @returns {Stack}
    */
-  fromArray(arr = []) {
-    arr.forEach((value) => this.enqueue(value));
+  static fromValues(...values) {
+    const queue = new Queue();
+    values.forEach((value) => queue.enqueue(value));
+    return queue;
   }
 }
 

@@ -1,5 +1,5 @@
 import Stack from './Stack';
-import Node from './Node';
+import NodeNext from './NodeNext';
 
 describe('Stack', () => {
   describe('constructor', () => {
@@ -13,7 +13,7 @@ describe('Stack', () => {
     test('when a value is passed', () => {
       const stack = new Stack(5);
 
-      expect(stack.top).toBeInstanceOf(Node);
+      expect(stack.top).toBeInstanceOf(NodeNext);
       expect(stack.length).toBe(1);
     });
   });
@@ -31,8 +31,7 @@ describe('Stack', () => {
 
   describe('pop', () => {
     test('popping from a populated stack', () => {
-      const stack = new Stack();
-      stack.fromArray([75, 25]);
+      const stack = Stack.fromValues(75, 25);
 
       expect(stack.length).toBe(2);
       expect(stack.pop()).toMatchObject({ value: 25 });

@@ -1,4 +1,4 @@
-import Node from './Node';
+import NodeNext from './NodeNext';
 
 class Stack {
   /**
@@ -20,12 +20,12 @@ class Stack {
    * @returns {Stack}
    */
   push(value) {
-    const node = new Node(value);
+    const newNode = new NodeNext(value);
     if (!this.length) {
-      this.top = node;
+      this.top = newNode;
     } else {
-      node.next = this.top;
-      this.top = node;
+      newNode.next = this.top;
+      this.top = newNode;
     }
     this.length++;
 
@@ -34,7 +34,7 @@ class Stack {
 
   /**
    * Pop the top value
-   * @returns {(Node|undefined)}
+   * @returns {(NodeNext|undefined)}
    */
   pop() {
     if (!this.length) return undefined;
@@ -47,8 +47,15 @@ class Stack {
     return temp;
   }
 
-  fromArray(value = []) {
-    value.forEach((val) => this.push(val));
+  /**
+   * Make Stack from passed arguments
+   * @param  {Array} values
+   * @returns {Stack}
+   */
+  static fromValues(...values) {
+    const stack = new Stack();
+    values.forEach((value) => stack.push(value));
+    return stack;
   }
 }
 

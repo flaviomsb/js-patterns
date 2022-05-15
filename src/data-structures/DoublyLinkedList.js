@@ -1,5 +1,5 @@
 import LinkedList from './LinkedList';
-import Node from './Node';
+import NodeNextPrev from './NodeNextPrev';
 
 class DoublyLinkedList extends LinkedList {
   /**
@@ -8,15 +8,15 @@ class DoublyLinkedList extends LinkedList {
    * @returns {DoublyLinkedList}
    */
   push(value) {
-    const node = new Node(value);
+    const newNode = new NodeNextPrev(value);
 
     if (!this.head) {
-      this.head = node;
-      this.tail = node;
+      this.head = newNode;
+      this.tail = newNode;
     } else {
-      this.tail.next = node;
-      node.prev = this.tail;
-      this.tail = node;
+      this.tail.next = newNode;
+      newNode.prev = this.tail;
+      this.tail = newNode;
     }
 
     this.length++;
@@ -26,7 +26,7 @@ class DoublyLinkedList extends LinkedList {
 
   /**
   * Remove the last node from the list
-  * @returns {(Node|undefined)}
+  * @returns {(NodeNextPrev|undefined)}
   */
   pop() {
     if (!this.head) return undefined;
@@ -52,7 +52,7 @@ class DoublyLinkedList extends LinkedList {
    * @returns {LinkedList}
    */
   unshift(value) {
-    const node = new Node(value);
+    const node = new NodeNextPrev(value);
 
     if (this.length === 0) {
       this.head = node;
@@ -70,7 +70,7 @@ class DoublyLinkedList extends LinkedList {
 
   /**
    * Remove the first node from the beginning of the list
-   * @returns {(Node|undefined)}
+   * @returns {(NodeNextPrev|undefined)}
    */
   shift() {
     if (!this.head) return undefined;
@@ -93,7 +93,7 @@ class DoublyLinkedList extends LinkedList {
   /**
   * Return the node for the given index number
   * @param {number} index
-  * @returns {(Node|undefined)}
+  * @returns {(NodeNextPrev|undefined)}
   * @throws {Error}
   */
   get(index) {
@@ -124,7 +124,7 @@ class DoublyLinkedList extends LinkedList {
     if (index === 0) return this.unshift(value);
     if (index === this.length) return this.push(value);
 
-    const newNode = new Node(value);
+    const newNode = new NodeNextPrev(value);
     const before = this.get(index - 1);
     const after = before.next;
     before.next = newNode;
@@ -139,7 +139,7 @@ class DoublyLinkedList extends LinkedList {
   /**
    * Remove the node for the given index number
    * @param {number} index
-   * @returns {(Node|undefined)}
+   * @returns {(NodeNextPrev|undefined)}
    * @throws {Error}
    */
   remove(index) {
@@ -156,6 +156,14 @@ class DoublyLinkedList extends LinkedList {
     this.length--;
 
     return toRemove;
+  }
+
+  /**
+   * Return new instace of list class
+   * @returns {DoublyLinkedList}
+   */
+  static createInstance() {
+    return new DoublyLinkedList();
   }
 }
 

@@ -1,4 +1,4 @@
-import Node from './Node';
+import NodeNext from './NodeNext';
 
 class LinkedList {
   /**
@@ -22,14 +22,14 @@ class LinkedList {
    * @returns {LinkedList}
    */
   push(value) {
-    const node = new Node(value);
+    const newNode = new NodeNext(value);
 
     if (!this.head) {
-      this.head = node;
-      this.tail = node;
+      this.head = newNode;
+      this.tail = newNode;
     } else {
-      this.tail.next = node;
-      this.tail = node;
+      this.tail.next = newNode;
+      this.tail = newNode;
     }
 
     this.length++;
@@ -39,7 +39,7 @@ class LinkedList {
 
   /**
    * Remove the last node from the list
-   * @returns {(Node|undefined)}
+   * @returns {(NodeNext|undefined)}
    */
   pop() {
     if (!this.head) return undefined;
@@ -72,17 +72,17 @@ class LinkedList {
    * @returns {LinkedList}
    */
   unshift(value) {
-    const node = new Node(value);
+    const newNode = new NodeNext(value);
 
     // If empty, make both head and tail point to the new node
     if (!this.head) {
-      this.head = node;
-      this.tail = node;
+      this.head = newNode;
+      this.tail = newNode;
     } else {
       // Set next prop of the new node to be the current head
       // then set the new head to be the new node
-      node.next = this.head;
-      this.head = node;
+      newNode.next = this.head;
+      this.head = newNode;
     }
     this.length++;
 
@@ -91,7 +91,7 @@ class LinkedList {
 
   /**
    * Remove the first node from the beginning of the list
-   * @returns {(Node|undefined)}
+   * @returns {(NodeNext|undefined)}
    */
   shift() {
     if (!this.head) return undefined;
@@ -110,7 +110,7 @@ class LinkedList {
   /**
    * Return the node for the given index number
    * @param {number} index
-   * @returns {(Node|undefined)}
+   * @returns {(NodeNext|undefined)}
    * @throws {Error}
    */
   get(index) {
@@ -155,7 +155,7 @@ class LinkedList {
     if (index === 0) return this.unshift(value);
     if (index === this.length) return this.push(value);
 
-    const newNode = new Node(value);
+    const newNode = new NodeNext(value);
     const prev = this.get(index - 1);
     newNode.next = prev.next;
     prev.next = newNode;
@@ -167,7 +167,7 @@ class LinkedList {
   /**
    * Remove the node for the given index number
    * @param {number} index
-   * @returns {(Node|undefined)}
+   * @returns {(NodeNext|undefined)}
    * @throws {Error}
    */
   remove(index) {
@@ -209,9 +209,20 @@ class LinkedList {
   /**
    * Push elements of an array into the list
    * @param {Array} arr
+   * @returns {LinkedList}
    */
-  fromArray(arr) {
-    arr.forEach((value) => this.push(value));
+  static fromValues(...values) {
+    const linkedList = this.createInstance();
+    values.forEach((value) => linkedList.push(value));
+    return linkedList;
+  }
+
+  /**
+   * Return new instace of list class
+   * @returns {LinkedList}
+   */
+  static createInstance() {
+    return new LinkedList();
   }
 
   /**

@@ -1,5 +1,5 @@
 import LinkedList from './LinkedList';
-import Node from './Node';
+import NodeNext from './NodeNext';
 
 describe('Linked list', () => {
   describe('constructor', () => {
@@ -14,8 +14,8 @@ describe('Linked list', () => {
     test('when a value is passed', () => {
       const linkedList = new LinkedList(5);
 
-      expect(linkedList.head).toBeInstanceOf(Node);
-      expect(linkedList.tail).toBeInstanceOf(Node);
+      expect(linkedList.head).toBeInstanceOf(NodeNext);
+      expect(linkedList.tail).toBeInstanceOf(NodeNext);
       expect(linkedList.tail).toEqual(linkedList.head);
       expect(linkedList.length).toBe(1);
     });
@@ -202,8 +202,7 @@ describe('Linked list', () => {
   });
 
   describe('set', () => {
-    const linkedList = new LinkedList();
-    linkedList.fromArray(['Suzana', 'Mariana', 'Liz']);
+    const linkedList = LinkedList.fromValues('Suzana', 'Mariana', 'Liz');
 
     test('when index is valid', () => {
       expect(linkedList.set(2, 'Elizabeth')).toBeTruthy();
@@ -218,8 +217,7 @@ describe('Linked list', () => {
   });
 
   describe('insert', () => {
-    const linkedList = new LinkedList();
-    linkedList.fromArray(['Austin', 'Dallas', 'El Paso']);
+    const linkedList = LinkedList.fromValues('Austin', 'Dallas', 'El Paso');
 
     test('when inserting at valid index', () => {
       expect(linkedList.length).toBe(3);
@@ -237,8 +235,7 @@ describe('Linked list', () => {
   });
 
   describe('remove', () => {
-    const linkedList = new LinkedList();
-    linkedList.fromArray(['John', 'Homer', 'Paul']);
+    const linkedList = LinkedList.fromValues('John', 'Homer', 'Paul');
 
     test('when removing with a valid index', () => {
       const toRemove = { value: 'Paul' };
@@ -256,8 +253,7 @@ describe('Linked list', () => {
 
   describe('reverse', () => {
     test('when list has two or more nodes', () => {
-      const linkedList = new LinkedList();
-      linkedList.fromArray(['Texas', 'Montana', 'North Dakota']);
+      const linkedList = LinkedList.fromValues('Texas', 'Montana', 'North Dakota');
 
       expect(linkedList.head).toMatchObject({
         value: 'Texas',

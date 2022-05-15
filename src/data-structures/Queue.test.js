@@ -1,5 +1,5 @@
 import Queue from './Queue';
-import Node from './Node';
+import NodeNext from './NodeNext';
 
 describe('Queue', () => {
   describe('constructor', () => {
@@ -14,8 +14,8 @@ describe('Queue', () => {
     test('when a non array value is passed', () => {
       const queue = new Queue(5);
 
-      expect(queue.first).toBeInstanceOf(Node);
-      expect(queue.last).toBeInstanceOf(Node);
+      expect(queue.first).toBeInstanceOf(NodeNext);
+      expect(queue.last).toBeInstanceOf(NodeNext);
       expect(queue.length).toBe(1);
     });
   });
@@ -32,8 +32,7 @@ describe('Queue', () => {
   });
 
   describe('dequeue', () => {
-    const queue = new Queue();
-    queue.fromArray(['batch #1', 'batch #2', 'batch #3']);
+    const queue = Queue.fromValues('batch #1', 'batch #2', 'batch #3');
 
     test.each([
       ['batch #1', 2],
