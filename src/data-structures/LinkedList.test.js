@@ -1,7 +1,7 @@
 import LinkedList from './LinkedList';
 import NodeNext from './NodeNext';
 
-describe('Linked list', () => {
+describe('Linked List', () => {
   describe('constructor', () => {
     test('when no value is passed', () => {
       const linkedList = new LinkedList();

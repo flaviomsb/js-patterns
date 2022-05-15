@@ -1,6 +1,6 @@
 import BsTree from './BsTree';
 
-describe('BsTree', () => {
+describe('Binary Search Tree', () => {
   test('constructor', () => {
     const tree = new BsTree();
     expect(tree.root).toBeNull();
