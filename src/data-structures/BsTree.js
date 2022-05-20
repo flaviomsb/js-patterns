@@ -79,6 +79,74 @@ class BsTree {
   }
 
   /**
+   * Breadth first search
+   * @returns {Array}
+   */
+  bfs() {
+    let currentNode = this.root;
+    const queue = [];
+    const results = [];
+    queue.push(currentNode);
+
+    while (queue.length) {
+      currentNode = queue.shift();
+      results.push(currentNode.value);
+      if (currentNode.left) queue.push(currentNode.left);
+      if (currentNode.right) queue.push(currentNode.right);
+    }
+
+    return results;
+  }
+
+  /**
+   * Depth first search - pre order
+   * @returns {Array}
+   */
+  dfsPreOrder() {
+    const results = [];
+    function traverse(currentNode) {
+      results.push(currentNode.value);
+      if (currentNode.left) traverse(currentNode.left);
+      if (currentNode.right) traverse(currentNode.right);
+    }
+    traverse(this.root);
+
+    return results;
+  }
+
+  /**
+   * Depth first search - post order
+   * @returns {Array}
+   */
+  dfsPostOrder() {
+    const results = [];
+    function traverse(currentNode) {
+      if (currentNode.left) traverse(currentNode.left);
+      if (currentNode.right) traverse(currentNode.right);
+      results.push(currentNode.value); // this is the basic difference from pre order
+    }
+    traverse(this.root);
+
+    return results;
+  }
+
+  /**
+   * Depth first search - in order
+   * @returns {Array}
+   */
+  dfsInOrder() {
+    const results = [];
+    function traverse(currentNode) {
+      if (currentNode.left) traverse(currentNode.left);
+      results.push(currentNode.value); // this is the basic difference from pre and post order
+      if (currentNode.right) traverse(currentNode.right);
+    }
+    traverse(this.root);
+
+    return results;
+  }
+
+  /**
    * Insert multiple values into the tree
    * @param {Array} values
    * @returns {BsTree}

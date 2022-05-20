@@ -90,4 +90,24 @@ describe('Binary Search Tree', () => {
       expect(tree.min(tree.root.right)).toMatchObject({ value: 23 });
     });
   });
+
+  describe('Tree traversal', () => {
+    const tree = BsTree.fromValues(47, 21, 76, 18, 27, 52, 82);
+
+    test('breadth first search', () => {
+      expect(tree.bfs()).toMatchObject([47, 21, 76, 18, 27, 52, 82]);
+    });
+
+    test('Depth first search - pre order', () => {
+      expect(tree.dfsPreOrder()).toMatchObject([47, 21, 18, 27, 76, 52, 82]);
+    });
+
+    test('Depth first search - post order', () => {
+      expect(tree.dfsPostOrder()).toMatchObject([18, 27, 21, 52, 82, 76, 47]);
+    });
+
+    test('Depth first search - in order', () => {
+      expect(tree.dfsInOrder()).toMatchObject([18, 21, 27, 47, 52, 76, 82]);
+    });
+  });
 });
