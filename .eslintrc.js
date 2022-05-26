@@ -14,7 +14,7 @@ module.exports = {
   rules: {
     'consistent-return': 1,
     'no-console': 0,
-    'no-restricted-syntax': 1,
+    'no-restricted-syntax': 0,
     'no-plusplus': 0,
   },
 };
