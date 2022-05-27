@@ -1,6 +1,6 @@
-import maxSubarraySum from './maxSubarraySum';
+import maxSubArraySum from './maxSubArraySum';
 
-describe('maxSubarraySum', () => {
+describe('maxSubArraySum', () => {
   test.each([
     [[100, 200, 300, 400], 2, 700],
     [[1, 4, 2, 10, 23, 3, 1, 0, 20], 4, 39],
@@ -8,6 +8,6 @@ describe('maxSubarraySum', () => {
     [[3, -2, 7, -4, 1, -1, 4, -2, 1], 2, 5],
     [[2, 3], 3, null],
   ])('Max sum of %s for length %s', (values, length, expectedResult) => {
-    expect(maxSubarraySum(values, length)).toBe(expectedResult);
+    expect(maxSubArraySum(values, length)).toBe(expectedResult);
   });
 });

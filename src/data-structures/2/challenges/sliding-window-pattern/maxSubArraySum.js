@@ -4,7 +4,7 @@
  * @param {number} length
  * @returns {number}
  */
-export default function maxSubarraySum(values, length) {
+export default function maxSubArraySum(values, length) {
   if (!values) return null;
   if (length > values.length) return null;
 

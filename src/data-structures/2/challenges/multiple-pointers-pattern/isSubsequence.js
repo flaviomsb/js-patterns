@@ -8,15 +8,15 @@
 export default function isSubsequence(str1, str2) {
   if (!str1) return true;
   const sub = [];
-  let i = 0;
-  let j = 0;
+  let left = 0;
+  let right = 0;
 
-  while (j < str2.length) {
-    if (str2[j] === str1[i]) {
-      sub.push(str1[i]);
-      i++;
+  while (right < str2.length) {
+    if (str2[right] === str1[left]) {
+      sub.push(str1[left]);
+      left++;
     }
-    j++;
+    right++;
   }
 
   return sub.length === str1.length;
