@@ -10,8 +10,8 @@ export function cart({
   locale = 'en-US',
   currency = 'USD',
 } = {}) {
-  let taxed; let
-    shipped = false;
+  let taxed;
+  let shipped = false;
   let total = subTotal;
 
   function addUp(percent) {
