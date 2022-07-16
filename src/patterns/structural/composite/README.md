@@ -1,4 +1,4 @@
-## Composite Pattern
+## <a href="https://jsmanifest.com/the-composite-pattern-in-javascript/" target="_blank">Composite Pattern</a>
 
 The composite pattern describes a group of objects that are treated the same way as a single instance of the same type of object.
 

@@ -1,4 +1,4 @@
-## Prototype Pattern
+## <a href="https://www.patterns.dev/posts/prototype-pattern/" target="_blank">Prototype Pattern</a>
 
 The Prototype pattern is about copying (clone) a partially or fully initialized object. It's also referred to as the Properties pattern.
 

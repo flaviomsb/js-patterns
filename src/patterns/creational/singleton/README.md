@@ -1,4 +1,4 @@
-## Singleton Pattern
+## <a href="https://www.patterns.dev/posts/singleton-pattern/" target="_blank">Singleton Pattern</a>
 
 Singletons are classes which can be instantiated once, and can be accessed globally.
 
