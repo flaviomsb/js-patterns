@@ -3,7 +3,6 @@
   "version": "1.0.0",
   "description": "JS studying time",
   "main": "index.js",
-  "type": "module",
   "scripts": {
     "test": "jest",
     "lint": "eslint --cache --ext .js,.json --format node_modules/eslint-formatter-pretty src",
