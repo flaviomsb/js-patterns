@@ -15,7 +15,7 @@
   "author": "fmsb",
   "license": "MIT",
   "devDependencies": {
-    "@babel/core": "^7.18.9",
+    "@babel/core": "^7.18.10",
     "@babel/plugin-transform-modules-commonjs": "^7.18.6",
     "@types/jest": "^28.1.6",
     "babel-jest": "^28.1.3",
