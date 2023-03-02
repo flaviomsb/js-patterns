@@ -18,7 +18,7 @@
     "@babel/core": "^7.21.0",
     "@babel/plugin-transform-modules-commonjs": "^7.21.2",
     "@types/jest": "^29.4.0",
-    "@types/node": "^18.14.2",
+    "@types/node": "^18.14.4",
     "babel-jest": "^29.4.3",
     "eslint": "^8.35.0",
     "eslint-config-airbnb-base": "^15.0.0",
