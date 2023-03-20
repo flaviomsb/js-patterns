@@ -18,7 +18,7 @@
  * Functional programming approach
  * @param {number} n
  */
-export default function pyramid(n, row = 0, level = '') {
+export default function pyramid(n: number, row = 0, level = '') {
   if (row === n) {
     return;
   }

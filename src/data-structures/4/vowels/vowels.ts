@@ -3,8 +3,14 @@
  i @param {string} str
  * @returns {number}
  */
-export default function vowels(str) {
-  return str.toLowerCase().split('').reduce((count, char) => (['a', 'e', 'i', 'o', 'u'].includes(char) ? count + 1 : count), 0);
+export default function vowels(str: string) {
+  return str
+    .toLowerCase()
+    .split('')
+    .reduce(
+      (count, char) => (['a', 'e', 'i', 'o', 'u'].includes(char) ? count + 1 : count),
+      0,
+    );
 }
 
 /**
@@ -13,7 +19,7 @@ export default function vowels(str) {
  * @param {string} str
  * @returns {number}
  */
-export function vowelsRegex(str) {
+export function vowelsRegex(str: string) {
   const matches = str.match(/[aeiou]/gi);
 
   return matches ? matches.length : 0;

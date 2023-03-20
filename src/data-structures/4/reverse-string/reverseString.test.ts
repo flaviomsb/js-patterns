@@ -1,4 +1,8 @@
-import reverseString, { reverseStringArray, reverseStringForLoop, reverseStringForOfLoop } from './reverseString';
+import reverseString, {
+  reverseStringArray,
+  reverseStringForLoop,
+  reverseStringForOfLoop,
+} from './reverseString';
 
 describe('String reversal', () => {
   test('reverseString', () => {

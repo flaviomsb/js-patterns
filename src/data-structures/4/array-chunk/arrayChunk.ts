@@ -5,7 +5,7 @@
  * @param {number} size
  * @returns {Array}
  */
-export default function arrayChunk(arr, size) {
+export default function arrayChunk(arr: number[], size: number): number[][] {
   const chunked = [];
   let index = 0;
 

@@ -5,6 +5,6 @@ import reverseString from '../reverse-string/reverseString';
  * @param {number} num
  * @returns {number}
  */
-export default function reverseInteger(num) {
+export default function reverseInteger(num: number) {
   return parseInt(reverseString(num.toString()), 10) * Math.sign(num);
 }

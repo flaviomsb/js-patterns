@@ -3,8 +3,8 @@
  * @param {number} n
  * @returns {Array}
  */
-export default function spiralMatrix(n) {
-  const results = [];
+export default function spiralMatrix(n: number) {
+  const results: any[] = [];
 
   for (let i = 0; i < n; i++) {
     results.push([]);

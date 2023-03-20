@@ -3,7 +3,7 @@
  * @param {string} str
  * @returns {string}
  */
-export default function capitalize(str) {
+export default function capitalize(str: string): string {
   return str.split(/\s/).map((word) => {
     if (word.length === 1) return word.toUpperCase();
 

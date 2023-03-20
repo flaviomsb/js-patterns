@@ -2,7 +2,7 @@
  * @param {string} str
  * @returns {boolean}
  */
-export default function palindrome(str) {
+export default function palindrome(str: string | null | undefined) {
   if (str === null || typeof str === 'undefined') {
     return false;
   }

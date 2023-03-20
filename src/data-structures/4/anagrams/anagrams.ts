@@ -1,5 +1,5 @@
-export default function anagrams(firstStr, secondStr) {
-  function cleanString(str) {
+export default function anagrams(firstStr: string, secondStr: string): boolean {
+  function cleanString(str: string) {
     return str.replace(/[^\w]/g, '').split('').sort().join('');
   }
 
