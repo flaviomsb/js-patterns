@@ -12,10 +12,15 @@ describe('PriorityQueue', () => {
       new PriorityItem({ value: 'process', priority: 1 }),
     );
     expect(queue.size()).toBe(4);
-    expect(queue.toString()).toEqual('{"value":"handle","priority":1},{"value":"process","priority":1},{"value":"call","priority":2},{"value":"flush","priority":3}');
+    expect(queue.toString()).toEqual(
+      // eslint-disable-next-line max-len
+      '{"value":"handle","priority":1},{"value":"process","priority":1},{"value":"call","priority":2},{"value":"flush","priority":3}',
+    );
   });
 
   test('enqueue must throw an exception at non priority item', () => {
-    expect(() => queue.enqueue('Austin')).toThrowError('cannot read priority from item: Austin');
+    expect(() => queue.enqueue('Austin')).toThrowError(
+      'cannot read priority from item: Austin',
+    );
   });
 });

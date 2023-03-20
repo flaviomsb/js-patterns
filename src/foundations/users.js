@@ -6,8 +6,14 @@ const capitalizeWords = (...words) => words.map((word) => capitalize(word));
 export const isMale = (user) => isOfGender(user, 'male');
 export const isFemale = (user) => isOfGender(user, 'female');
 
-export const getFullName = ({ first_name: first, last_name: last, title }) => ({ fullName: capitalizeWords(title, first, last).join(' ') });
-export const getAddress = ({ location }) => ({ address: Object.entries(location).map(([, val]) => capitalize(val)).join(', ') });
+export const getFullName = ({ first_name: first, last_name: last, title }) => ({
+  fullName: capitalizeWords(title, first, last).join(' '),
+});
+export const getAddress = ({ location }) => ({
+  address: Object.entries(location)
+    .map(([, val]) => capitalize(val))
+    .join(', '),
+});
 export const mockSalary = ({ min, max }) => Math.ceil(Math.random() * (max - min) + min);
 
 export const users = [
@@ -521,7 +527,7 @@ export const users = [
     phone_number: '(653)-097-7179',
     birthdate: 701474999,
     location: {
-      street: '7191 rue de lu\'abbé-migne',
+      street: "7191 rue de lu'abbé-migne",
       city: 'epesses',
       state: 'graubünden',
       postcode: 6732,
@@ -611,7 +617,7 @@ export const users = [
     phone_number: '(964)-085-6735',
     birthdate: 900427237,
     location: {
-      street: '9419 rue du bât-d\'argent',
+      street: "9419 rue du bât-d'argent",
       city: 'syens',
       state: 'appenzell innerrhoden',
       postcode: 4241,
@@ -1367,7 +1373,7 @@ export const users = [
     phone_number: '06-57-69-13-70',
     birthdate: 250107085,
     location: {
-      street: '7277 rue de l\'abbé-de-l\'épée',
+      street: "7277 rue de l'abbé-de-l'épée",
       city: 'nice',
       state: 'sarthe',
       postcode: 83089,
@@ -1529,7 +1535,7 @@ export const users = [
     phone_number: '06-97-94-63-87',
     birthdate: 559308366,
     location: {
-      street: '2650 rue de l\'abbé-patureau',
+      street: "2650 rue de l'abbé-patureau",
       city: 'nîmes',
       state: 'jura',
       postcode: 52182,
@@ -1657,7 +1663,7 @@ export const users = [
     location: {
       street: '5749 main street west',
       city: 'gisborne',
-      state: 'hawke\'s bay',
+      state: "hawke's bay",
       postcode: 48884,
     },
     username: 'blacksnake288',
@@ -2611,7 +2617,7 @@ export const users = [
     location: {
       street: '1177 atkinson avenue',
       city: 'auckland',
-      state: 'hawke\'s bay',
+      state: "hawke's bay",
       postcode: 97532,
     },
     username: 'redfrog556',
@@ -2915,7 +2921,7 @@ export const users = [
     phone_number: '06-29-05-29-92',
     birthdate: 459082668,
     location: {
-      street: '4285 place de l\'abbé-basset',
+      street: "4285 place de l'abbé-basset",
       city: 'reims',
       state: 'martinique',
       postcode: 53720,

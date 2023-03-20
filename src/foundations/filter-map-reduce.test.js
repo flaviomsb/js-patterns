@@ -1,9 +1,15 @@
 import {
-  users, isMale, isFemale, getAddress, getFullName, mockSalary,
+  users,
+  isMale,
+  isFemale,
+  getAddress,
+  getFullName,
+  mockSalary,
 } from './users';
 
 describe('Filter, Map and Reduce', () => {
-  test('map creates a new array populated with the results of calling a provided function on every element in the calling array', () => {
+  test(`map creates a new array populated with the results
+    of calling a provided function on every element in the calling array`, () => {
     const addresses = users
       .slice(0, 2)
       .map((user) => ({ ...getFullName(user), ...getAddress(user) }));
@@ -20,7 +26,8 @@ describe('Filter, Map and Reduce', () => {
     ]);
   });
 
-  test('filter creates a new array with all elements that pass the test implemented by the provided function', () => {
+  test(`filter creates a new array with all elements that
+    pass the test implemented by the provided function`, () => {
     const usersCount = users.length;
     const maleCount = users.filter(isMale).length;
     const femaleCount = users.filter(isFemale).length;

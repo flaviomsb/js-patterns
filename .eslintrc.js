@@ -26,7 +26,7 @@ module.exports = {
       '.ts': 'never',
     }],
     'max-len': ['error', {
-      code: 100,
+      code: 110,
       tabWidth: 2,
     }],
     '@typescript-eslint/no-explicit-any': 0,
