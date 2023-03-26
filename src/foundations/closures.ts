@@ -1,5 +1,5 @@
-export function sum(x) {
-  return (y) => x + y;
+export function sum(x: number) {
+  return (y: number) => x + y;
 }
 
 // Closure simmulating private methods
@@ -10,11 +10,11 @@ export function cart({
   locale = 'en-US',
   currency = 'USD',
 } = {}) {
-  let taxed;
+  let taxed: boolean;
   let shipped = false;
   let total = subTotal;
 
-  function addUp(percent) {
+  function addUp(percent: number) {
     total += subTotal * (percent / 100);
   }
 
