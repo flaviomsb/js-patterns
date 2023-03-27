@@ -1,22 +1,52 @@
 import capitalize from 'lodash.capitalize';
 
-const isOfGender = ({ gender }, wantedGender) => gender === wantedGender;
-const capitalizeWords = (...words) => words.map((word) => capitalize(word));
+export interface User {
+  email: string;
+  gender: string;
+  phone_number: string;
+  birthdate: number;
+  location: {
+    street: string;
+    city: string;
+    state: string;
+    postcode: number | string;
+  },
+  username: string;
+  password: string;
+  first_name: string;
+  last_name: string;
+  title: string;
+  picture: string;
+}
 
-export const isMale = (user) => isOfGender(user, 'male');
-export const isFemale = (user) => isOfGender(user, 'female');
+export interface Range {
+  min: number;
+  max: number;
+}
 
-export const getFullName = ({ first_name: first, last_name: last, title }) => ({
+const isOfGender = ({ gender }: User, wantedGender: string) => gender === wantedGender;
+const capitalizeWords = (...words: string[]) => words.map((word) => capitalize(word));
+
+export const isMale = (user: User) => isOfGender(user, 'male');
+export const isFemale = (user: User) => isOfGender(user, 'female');
+
+export const getFullName = ({ first_name: first, last_name: last, title }: User) => ({
   fullName: capitalizeWords(title, first, last).join(' '),
 });
-export const getAddress = ({ location }) => ({
+export const getAddress = ({ location }: User) => ({
   address: Object.entries(location)
-    .map(([, val]) => capitalize(val))
+    .map(([, val]) => {
+      if (typeof val === 'string') {
+        return capitalize(val);
+      }
+
+      return val;
+    })
     .join(', '),
 });
-export const mockSalary = ({ min, max }) => Math.ceil(Math.random() * (max - min) + min);
+export const mockSalary = ({ min, max }: Range) => Math.ceil(Math.random() * (max - min) + min);
 
-export const users = [
+export const users: User[] = [
   {
     email: 'melany.wijngaard@example.com',
     gender: 'female',

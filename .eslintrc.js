@@ -30,5 +30,6 @@ module.exports = {
       tabWidth: 2,
     }],
     '@typescript-eslint/no-explicit-any': 0,
+    '@typescript-eslint/ban-ts-comment': 0,
   },
 };

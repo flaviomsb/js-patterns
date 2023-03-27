@@ -1,7 +1,7 @@
 // Decimals workaround from https://flaviocopes.com/javascript-decimal-arithmetics/
-const sum = (a, b, positions) => {
+const sum = (a: number, b: number, positions: number) => {
   const factor = 10 ** positions;
-  return (a.toFixed(positions) * factor + b.toFixed(positions) * factor) / factor;
+  return (parseFloat(a.toFixed(positions)) * factor + parseFloat(b.toFixed(positions)) * factor) / factor;
 };
 
 describe('Decimals arithmetic', () => {

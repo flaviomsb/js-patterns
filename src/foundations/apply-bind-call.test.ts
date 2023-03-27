@@ -1,14 +1,18 @@
 describe('apply', () => {
+  type User = {
+    name: string;
+  }
+
   it('must pass an array of parameters to apply', () => {
-    const userA = {
+    const userA: User = {
       name: 'John Doe',
     };
 
-    const userB = {
+    const userB: User = {
       name: 'Jeffrey Doe',
     };
 
-    function greet(city) {
+    function greet(this: User, city: string) {
       return `Hi ${this.name}, welcome to ${city}!`;
     }
 
@@ -18,16 +22,20 @@ describe('apply', () => {
 });
 
 describe('call', () => {
+  type Taxable = {
+    tax: number;
+  };
+
   it('must pass a list of parameters to call', () => {
-    const usa = {
+    const usa: Taxable = {
       tax: 10.5,
     };
 
-    const japan = {
+    const japan: Taxable = {
       tax: 8.9,
     };
 
-    function calculateFee(amount, locale, currency) {
+    function calculateFee(this: Taxable, amount: number, locale: string, currency: string) {
       return Intl.NumberFormat(locale, { style: 'currency', currency }).format(amount * (this.tax / 100));
     }
 
@@ -37,16 +45,20 @@ describe('call', () => {
 });
 
 describe('bind', () => {
+  type Location = {
+    city: string;
+  };
+
   describe('must differentiate contexts', () => {
-    function printLocation() {
+    function printLocation(this: Location) {
       return `You are in ${this.city}`;
     }
 
-    const position1 = {
+    const position1: Location = {
       city: 'Brussels',
     };
 
-    const position2 = {
+    const position2: Location = {
       city: 'Antwerpen',
     };
 
