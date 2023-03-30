@@ -1,7 +1,7 @@
 import QueueArray from './QueueArray';
 
 describe('QueueArray', () => {
-  const queue = new QueueArray();
+  const queue = new QueueArray<string>();
 
   test('enqueue', () => {
     queue.enqueue('Austin', 'Dallas', 'Houston');
@@ -27,6 +27,6 @@ describe('QueueArray', () => {
   });
 
   test('fromValues', () => {
-    expect(QueueArray.fromValues(1, 2, 3).toString()).toEqual('1,2,3');
+    expect(QueueArray.fromValues<number>(1, 2, 3).toString()).toEqual('1,2,3');
   });
 });
