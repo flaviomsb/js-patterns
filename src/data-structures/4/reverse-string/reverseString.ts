@@ -3,7 +3,7 @@
  * @param {string} str
  * @returns {string}
  */
-export default function reverseString(str) {
+export default function reverseString(str: string) {
   return str.split('').reduceRight((r, l) => r.concat(l), '');
 }
 
@@ -12,7 +12,7 @@ export default function reverseString(str) {
  * @param {string} str
  * @returns {string}
  */
-export function reverseStringArray(str) {
+export function reverseStringArray(str: string) {
   return str.split('').reverse().join('');
 }
 
@@ -21,7 +21,7 @@ export function reverseStringArray(str) {
  * @param {string} str
  * @returns {string}
  */
-export function reverseStringForLoop(str) {
+export function reverseStringForLoop(str: string) {
   let reversed = '';
 
   for (let i = str.length - 1; i >= 0; --i) {
@@ -36,7 +36,7 @@ export function reverseStringForLoop(str) {
  * @param {string} str
  * @returns {string}
  */
-export function reverseStringForOfLoop(str) {
+export function reverseStringForOfLoop(str: string) {
   let reversed = '';
 
   for (const char of str) {
