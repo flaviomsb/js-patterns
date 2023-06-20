@@ -140,12 +140,7 @@ describe('LinkedList', () => {
     test('adds to the end of the list', () => {
       const linkedList = new LinkedList();
       linkedList.insertFirst('a');
-
       linkedList.insertLast('b');
-
-      linkedList.forEach(node => {
-        console.log({ node });
-      });
 
       expect(linkedList.size()).toEqual(2);
       expect(linkedList.getLast()?.data).toEqual('b');
