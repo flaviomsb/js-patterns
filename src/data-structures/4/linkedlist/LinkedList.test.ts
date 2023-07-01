@@ -280,7 +280,7 @@ describe('LinkedList', () => {
       linkedList.insertLast(3);
       linkedList.insertLast(4);
 
-      linkedList.forEach((node: Node<number>, _: number) => {
+      linkedList.forEach((node: Node<number>) => {
         node.data += 10;
       });
 
@@ -300,7 +300,7 @@ describe('LinkedList', () => {
       linkedList.insertLast(3);
       linkedList.insertLast(4);
 
-      for (let node of linkedList) {
+      for (const node of linkedList) {
         node.data += 10;
       }
 
@@ -313,7 +313,8 @@ describe('LinkedList', () => {
     test('for...of works on an empty list', () => {
       const linkedList = new LinkedList();
       expect(() => {
-        for (let node of linkedList) {
+        for (const node of linkedList) {
+          console.log({ node });
         }
       }).not.toThrow();
     });
