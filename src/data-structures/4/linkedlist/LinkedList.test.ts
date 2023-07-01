@@ -318,4 +318,48 @@ describe('LinkedList', () => {
       }).not.toThrow();
     });
   });
+
+  describe('circular', () => {
+    test('circular detects circular linked lists', () => {
+      const linkedList = new LinkedList();
+      const a = new Node('a');
+      const b = new Node('b');
+      const c = new Node('c');
+
+      linkedList.head = a;
+      a.next = b;
+      b.next = c;
+      c.next = b;
+
+      expect(linkedList.isCircular()).toEqual(true);
+    });
+
+    test('circular detects circular linked lists linked at the head', () => {
+      const linkedList = new LinkedList();
+      const a = new Node('a');
+      const b = new Node('b');
+      const c = new Node('c');
+
+      linkedList.head = a;
+      a.next = b;
+      b.next = c;
+      c.next = a;
+
+      expect(linkedList.isCircular()).toEqual(true);
+    });
+
+    test('circular detects non-circular linked lists', () => {
+      const linkedList = new LinkedList();
+      const a = new Node('a');
+      const b = new Node('b');
+      const c = new Node('c');
+
+      linkedList.head = a;
+      a.next = b;
+      b.next = c;
+      c.next = null;
+
+      expect(linkedList.isCircular()).toEqual(false);
+    });
+  });
 });

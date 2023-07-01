@@ -122,4 +122,20 @@ export default class LinkedList<T> {
       node = node.next;
     }
   }
+
+  public isCircular(): boolean {
+    let slow = this.getFirst();
+    let fast = this.getFirst();
+
+    while (slow?.next && fast?.next && fast.next.next) {
+      slow = slow?.next;
+      fast = fast.next.next;
+
+      if (slow === fast) {
+        return true;
+      }
+    }
+
+    return false;
+  }
 }
