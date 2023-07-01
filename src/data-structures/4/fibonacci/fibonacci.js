@@ -25,7 +25,7 @@ export function recursiveFibonacci(num) {
 export default function fibonacci(num) {
   if (num < 2) return num;
 
-  // eslint-disable-next-line no-use-before-define
+  // eslint-disable-next-line no-use-before-define, @typescript-eslint/no-use-before-define
   return memoized(num - 1) + memoized(num - 2);
 }
 
