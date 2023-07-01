@@ -138,4 +138,21 @@ export default class LinkedList<T> {
 
     return false;
   }
+
+  public fromLast(n: number) {
+    let slow = this.getFirst();
+    let fast = this.getFirst();
+
+    while (n > 0 && fast?.next) {
+      fast = fast.next;
+      n--;
+    }
+
+    while (slow?.next && fast?.next) {
+      slow = slow.next;
+      fast = fast.next;
+    }
+
+    return slow;
+  }
 }

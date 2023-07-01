@@ -363,4 +363,18 @@ describe('LinkedList', () => {
       expect(linkedList.isCircular()).toEqual(false);
     });
   });
+
+  describe('fromLast', () => {
+    test('fromLast returns the node n elements from the end', () => {
+      const linkedList = new LinkedList();
+
+      linkedList.insertLast('a');
+      linkedList.insertLast('b');
+      linkedList.insertLast('c');
+      linkedList.insertLast('d');
+      linkedList.insertLast('e');
+
+      expect(linkedList.fromLast(3)?.data).toEqual('b');
+    });
+  });
 });
