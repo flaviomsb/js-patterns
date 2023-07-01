@@ -1,7 +1,7 @@
 describe('apply', () => {
   type User = {
     name: string;
-  }
+  };
 
   it('must pass an array of parameters to apply', () => {
     const userA: User = {
