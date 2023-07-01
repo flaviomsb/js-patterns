@@ -26,14 +26,14 @@ console.log(
 );
 console.log('Notice how address variable becomes undefined', { address });
 console.log('So the global namespace gets an unwanted new variable "info"', {
-  info: global.info,
+  info: globalThis.info,
 });
 console.log('And also defines along a "printInfo" function', {
-  printInfo: global.pr,
+  printInfo: globalThis.pr,
 });
 
-delete global.info;
-delete global.printInfo;
+delete globalThis.info;
+delete globalThis.printInfo;
 
 const safeAddress = SafeAddress('345 2nd ave');
 console.log('\n');
@@ -43,7 +43,7 @@ console.log(
 console.log('So now address object is correct instantiated', { safeAddress });
 console.log(
   'And finally no "info" variable or "printInfo" function defined in the global namespace',
-  { info: global?.info, printInfo: global?.printInfo },
+  { info: globalThis?.info, printInfo: globalThis?.printInfo },
 );
 
 const safeAddressPattern1 = SafeAddressPattern('789 3rd ave');
