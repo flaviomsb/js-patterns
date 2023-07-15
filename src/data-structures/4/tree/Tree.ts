@@ -32,4 +32,25 @@ export default class Tree<T> {
       }
     }
   }
+
+  public levelWidth(): Array<number> {
+    const arr = [this.root, 's'];
+    const counters = [0];
+
+    while (arr.length > 1) {
+      const node = arr.shift();
+
+      if (node) {
+        if (typeof node === 'string' && node === 's') {
+          counters.push(0);
+          arr.push('s');
+        } else if (node instanceof Node) {
+          arr.push(...node.children);
+          counters[counters.length - 1]++;
+        }
+      }
+    }
+
+    return counters;
+  }
 }
