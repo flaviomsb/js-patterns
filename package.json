@@ -15,10 +15,10 @@
   "author": "fmsb",
   "license": "MIT",
   "devDependencies": {
-    "@babel/core": "^7.22.10",
-    "@babel/plugin-transform-modules-commonjs": "^7.22.5",
+    "@babel/core": "^7.22.11",
+    "@babel/plugin-transform-modules-commonjs": "^7.22.11",
     "@babel/preset-env": "^7.22.10",
-    "@babel/preset-typescript": "^7.22.5",
+    "@babel/preset-typescript": "^7.22.11",
     "@jest/globals": "^29.6.3",
     "@types/jest": "^29.5.4",
     "@types/lodash.capitalize": "^4.2.7",
