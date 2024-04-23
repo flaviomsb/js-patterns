@@ -153,4 +153,15 @@ describe('Doubly Linked List', () => {
       expect(doublyLinkedList.remove(5)).toBeNull();
     });
   });
+
+  describe('reverse', () => {
+    test('when list has two or more nodes', () => {
+      const doublyLinkedList = new DoublyLinkedList();
+      doublyLinkedList.push(1).push(3).push(5).push(7);
+
+      expect(doublyLinkedList.toString()).toEqual('1,3,5,7');
+      doublyLinkedList.reverse();
+      expect(doublyLinkedList.toString()).toEqual('7,5,3,1');
+    });
+  });
 });

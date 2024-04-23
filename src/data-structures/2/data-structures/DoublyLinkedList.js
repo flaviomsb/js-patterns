@@ -251,6 +251,40 @@ export class DoublyLinkedList {
     return toRemove;
   }
 
+  /**
+   * Reverse the nodes of the list
+   * @returns {this}
+   */
+  reverse() {
+    let temp = this.head;
+    this.head = this.tail;
+    this.tail = temp;
+    let { next } = temp;
+    let prev = null;
+
+    for (let i = 0; i < this.length; i++) {
+      next = temp.next;
+      temp.next = prev;
+      prev = temp;
+      temp = next;
+    }
+
+    return this;
+  }
+
+  toString() {
+    let index = 0, current = this.head;
+    const values = [current.value];
+
+    while (index !== this.length - 1) {
+      current = current.next;
+      values.push(current.value);
+      index++;
+    }
+
+    return values.toString();
+  }
+
   #invalidIndex(index) {
     return index < 0 || index >= this.length;
   }
