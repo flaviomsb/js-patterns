@@ -98,8 +98,8 @@ describe('Doubly Linked List', () => {
     });
 
     test('when passing an invalid index like -2 or >= list length', () => {
-      expect(() => doublyLinkedList.get(-2)).toThrowError('index: -2 is out of bounds');
-      expect(() => doublyLinkedList.get(4)).toThrowError('index: 4 is out of bounds');
+      expect(() => doublyLinkedList.get(-2)).toThrow('index: -2 is out of bounds');
+      expect(() => doublyLinkedList.get(4)).toThrow('index: 4 is out of bounds');
     });
   });
 
@@ -133,7 +133,7 @@ describe('Doubly Linked List', () => {
     });
 
     test('when index is not valid', () => {
-      expect(() => doublyLinkedList.insert(5, 'San Antonio')).toThrowError('index: 5 is out of bounds');
+      expect(() => doublyLinkedList.insert(5, 'San Antonio')).toThrow('index: 5 is out of bounds');
     });
   });
 
@@ -150,7 +150,7 @@ describe('Doubly Linked List', () => {
     });
 
     test('when index is not valid', () => {
-      expect(() => doublyLinkedList.remove(5)).toThrowError('index: 5 is out of bounds');
+      expect(() => doublyLinkedList.remove(5)).toThrow('index: 5 is out of bounds');
     });
   });
 });

@@ -187,8 +187,8 @@ describe('Linked List', () => {
     });
 
     test('when passing an invalid index like -2 or >= list length', () => {
-      expect(() => linkedList.get(-2)).toThrowError('index: -2 is out of bounds');
-      expect(() => linkedList.get(4)).toThrowError('index: 4 is out of bounds');
+      expect(() => linkedList.get(-2)).toThrow('index: -2 is out of bounds');
+      expect(() => linkedList.get(4)).toThrow('index: 4 is out of bounds');
     });
   });
 
@@ -203,7 +203,7 @@ describe('Linked List', () => {
     });
 
     test('when index is not valid', () => {
-      expect(() => linkedList.set(3, 'Marcelo')).toThrowError('index: 3 is out of bounds');
+      expect(() => linkedList.set(3, 'Marcelo')).toThrow('index: 3 is out of bounds');
     });
   });
 
@@ -238,7 +238,7 @@ describe('Linked List', () => {
     });
 
     test('when index is not valid', () => {
-      expect(() => linkedList.insert(6, 'San Antonio')).toThrowError('index: 6 is out of bounds');
+      expect(() => linkedList.insert(6, 'San Antonio')).toThrow('index: 6 is out of bounds');
     });
   });
 
@@ -265,7 +265,7 @@ describe('Linked List', () => {
     });
 
     test('when index is not valid', () => {
-      expect(() => linkedList.remove(5)).toThrowError('index: 5 is out of bounds');
+      expect(() => linkedList.remove(5)).toThrow('index: 5 is out of bounds');
     });
   });
 

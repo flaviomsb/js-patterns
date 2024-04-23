@@ -19,7 +19,7 @@ describe('PriorityQueue', () => {
   });
 
   test('enqueue must throw an exception at non priority item', () => {
-    expect(() => queue.enqueue('Austin')).toThrowError(
+    expect(() => queue.enqueue('Austin')).toThrow(
       'cannot read priority from item: Austin',
     );
   });

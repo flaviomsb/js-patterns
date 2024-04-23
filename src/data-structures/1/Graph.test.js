@@ -42,7 +42,7 @@ describe('Graph', () => {
     graph.addVertex('A');
     graph.addVertex('B');
 
-    expect(() => graph.addEdge('A', 'C')).toThrowError('Vertex "C" does not exist');
+    expect(() => graph.addEdge('A', 'C')).toThrow('Vertex "C" does not exist');
   });
 
   test('remove edge', () => {
@@ -62,7 +62,7 @@ describe('Graph', () => {
     graph.addVertex('X');
     graph.addEdge('A', 'X');
 
-    expect(() => graph.removeEdge('A', 'Z')).toThrowError('Vertex "Z" does not exist');
+    expect(() => graph.removeEdge('A', 'Z')).toThrow('Vertex "Z" does not exist');
   });
 
   test('remove vertex', () => {
