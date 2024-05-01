@@ -58,9 +58,9 @@ class Queue {
   }
 
   /**
-   * Make Stack from passed arguments
+   * Make a Queue from the passed arguments
    * @param  {Array} values
-   * @returns {Stack}
+   * @returns {Queue}
    */
   static fromValues(...values) {
     const queue = new Queue();
