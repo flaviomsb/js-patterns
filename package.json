@@ -5,6 +5,7 @@
   "main": "index.js",
   "scripts": {
     "test": "jest",
+    "test:watch": "jest --watch",
     "lint": "eslint --cache --ext .js,.ts,.json --format node_modules/eslint-formatter-pretty src",
     "lint:fix": "eslint --fix --cache --ext .js,.ts,.jsx,.json --format node_modules/eslint-formatter-pretty src"
   },
