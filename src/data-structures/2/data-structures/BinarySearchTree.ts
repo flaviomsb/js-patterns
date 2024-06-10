@@ -14,10 +14,6 @@ export class BinarySearchTree {
   }
 
   public contains(value: number): boolean {
-    if (!this.root) {
-      return false;
-    }
-
     return this.containsValue(this.root, value);
   }
 
@@ -37,11 +33,15 @@ export class BinarySearchTree {
     }
   }
 
-  protected containsValue(current: TreeNode, value: number): boolean {
+  protected containsValue(current: TreeNode | null, value: number): boolean {
+    if (!current) {
+      return false;
+    }
+
     if (value < current.value) {
-      return this.containsValue(current.left!, value);
+      return this.containsValue(current.left, value);
     } else if (value > current.value) {
-      return this.containsValue(current.right!, value);
+      return this.containsValue(current.right, value);
     } else {
       return true;
     }
