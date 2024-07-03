@@ -1,4 +1,4 @@
-import { BinarySearchTree } from './BinarySearchTree';
+import { BinarySearchTree, BSTNode } from './BinarySearchTree';
 import { TreeNode } from './TreeNode';
 
 describe('BinarySearchTree', () => {
@@ -61,7 +61,7 @@ describe('BinarySearchTree', () => {
     expect(bst.contains(92)).toBeTruthy();
   });
 
-  test('should return the expected breadth first search result', () => {
+  describe('tree traversal', () => {
     const bst = new BinarySearchTree();
 
     bst.insert(35);
@@ -71,8 +71,14 @@ describe('BinarySearchTree', () => {
     bst.insert(1);
     bst.insert(101);
     bst.insert(49);
-    const bfs = bst.breadthFirstSearch().map(item => item?.value);
 
-    expect(bfs).toMatchObject([35, 21, 92, 5, 49, 101, 1]);
+    test.each([
+      ['breadth first search', bst.breadthFirstSearch(), [35, 21, 92, 5, 49, 101, 1]],
+      ['depth first search pre-order', bst.depthFirstSearchPreOrder(), [35, 21, 5, 1, 92, 49, 101]],
+    ])('should return the expected %s result', (_, traversal: BSTNode[], expectedTraversal: number[]) => {
+      const bfs = traversal.map(item => item?.value);
+
+      expect(bfs).toMatchObject(expectedTraversal);
+    });
   });
 });
