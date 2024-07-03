@@ -17,6 +17,28 @@ export class BinarySearchTree {
     return this.containsValue(this.root, value);
   }
 
+  public breadthFirstSearch(): (TreeNode | null)[] {
+    let node = this.root;
+    const queue = [];
+    const result = [];
+    queue.push(node);
+
+    while (queue.length) {
+      node = queue.shift() as TreeNode | null;
+      result.push(node);
+
+      if (node?.left) {
+        queue.push(node.left);
+      }
+
+      if (node?.right) {
+        queue.push(node.right);
+      }
+    }
+
+    return result;
+  }
+
   protected insertNode(current: TreeNode, newNode: TreeNode): void {
     if (newNode.value < current.value) {
       if (!current.left) {
