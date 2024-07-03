@@ -60,4 +60,19 @@ describe('BinarySearchTree', () => {
     expect(bst.contains(6)).toBeFalsy();
     expect(bst.contains(92)).toBeTruthy();
   });
+
+  test('should return the expected breadth first search result', () => {
+    const bst = new BinarySearchTree();
+
+    bst.insert(35);
+    bst.insert(21);
+    bst.insert(5);
+    bst.insert(92);
+    bst.insert(1);
+    bst.insert(101);
+    bst.insert(49);
+    const bfs = bst.breadthFirstSearch().map(item => item?.value);
+
+    expect(bfs).toMatchObject([35, 21, 92, 5, 49, 101, 1]);
+  });
 });
