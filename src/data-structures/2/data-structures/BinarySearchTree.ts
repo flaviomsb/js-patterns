@@ -1,7 +1,9 @@
 import { TreeNode } from './TreeNode';
 
+export type BSTNode = TreeNode | null;
+
 export class BinarySearchTree {
-  public root: TreeNode | null = null;
+  public root: BSTNode = null;
 
   public insert(value: number): void {
     const node = new TreeNode(value);
@@ -17,14 +19,14 @@ export class BinarySearchTree {
     return this.containsValue(this.root, value);
   }
 
-  public breadthFirstSearch(): (TreeNode | null)[] {
+  public breadthFirstSearch(): BSTNode[] {
     let node = this.root;
     const queue = [];
-    const result = [];
+    const result: BSTNode[] = [];
     queue.push(node);
 
     while (queue.length) {
-      node = queue.shift() as TreeNode | null;
+      node = queue.shift() as BSTNode;
       result.push(node);
 
       if (node?.left) {
@@ -35,6 +37,20 @@ export class BinarySearchTree {
         queue.push(node.right);
       }
     }
+
+    return result;
+  }
+
+  public depthFirstSearchPreOrder() {
+    const result: BSTNode[] = [];
+
+    function traverse(node: BSTNode) {
+      result.push(node);
+      if (node?.left) traverse(node.left);
+      if (node?.right) traverse(node.right);
+    }
+
+    traverse(this.root);
 
     return result;
   }
@@ -55,7 +71,7 @@ export class BinarySearchTree {
     }
   }
 
-  protected containsValue(current: TreeNode | null, value: number): boolean {
+  protected containsValue(current: BSTNode, value: number): boolean {
     if (!current) {
       return false;
     }
