@@ -2,6 +2,12 @@ import { TreeNode } from './TreeNode';
 
 export type BSTNode = TreeNode | null;
 
+enum DepthFirstSearchType {
+  PreOrder,
+  PostOrder,
+  InOrder,
+}
+
 export class BinarySearchTree {
   public root: BSTNode = null;
 
@@ -42,40 +48,36 @@ export class BinarySearchTree {
   }
 
   public depthFirstSearchPreOrder() {
-    const result: BSTNode[] = [];
-
-    function traverse(node: BSTNode) {
-      result.push(node);
-      if (node?.left) traverse(node.left);
-      if (node?.right) traverse(node.right);
-    }
-
-    traverse(this.root);
-
-    return result;
+    return this.runDepthFirstSearchType(DepthFirstSearchType.PreOrder);
   }
 
   public depthFirstSearchPostOrder() {
-    const result: BSTNode[] = [];
-
-    function traverse(node: BSTNode) {
-      if (node?.left) traverse(node.left);
-      if (node?.right) traverse(node.right);
-      result.push(node);
-    }
-
-    traverse(this.root);
-
-    return result;
+    return this.runDepthFirstSearchType(DepthFirstSearchType.PostOrder);
   }
 
   public depthFirstSearchInOrder() {
+    return this.runDepthFirstSearchType(DepthFirstSearchType.InOrder);
+  }
+
+  protected runDepthFirstSearchType(type: DepthFirstSearchType) {
     const result: BSTNode[] = [];
 
     function traverse(node: BSTNode) {
-      if (node?.left) traverse(node.left);
-      result.push(node);
-      if (node?.right) traverse(node.right);
+      if (type === DepthFirstSearchType.PreOrder) {
+        result.push(node);
+        if (node?.left) traverse(node.left);
+        if (node?.right) traverse(node.right);
+      } else if (type === DepthFirstSearchType.PostOrder) {
+        if (node?.left) traverse(node.left);
+        if (node?.right) traverse(node.right);
+        result.push(node);
+      } else if (type === DepthFirstSearchType.InOrder) {
+        if (node?.left) traverse(node.left);
+        result.push(node);
+        if (node?.right) traverse(node.right);
+      } else {
+        throw new Error('Invalid depth first search type');
+      }
     }
 
     traverse(this.root);
