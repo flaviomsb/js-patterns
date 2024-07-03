@@ -69,6 +69,20 @@ export class BinarySearchTree {
     return result;
   }
 
+  public depthFirstSearchInOrder() {
+    const result: BSTNode[] = [];
+
+    function traverse(node: BSTNode) {
+      if (node?.left) traverse(node.left);
+      result.push(node);
+      if (node?.right) traverse(node.right);
+    }
+
+    traverse(this.root);
+
+    return result;
+  }
+
   protected insertNode(current: TreeNode, newNode: TreeNode): void {
     if (newNode.value < current.value) {
       if (!current.left) {
