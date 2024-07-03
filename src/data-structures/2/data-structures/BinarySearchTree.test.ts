@@ -76,6 +76,7 @@ describe('BinarySearchTree', () => {
       ['breadth first search', bst.breadthFirstSearch(), [35, 21, 92, 5, 49, 101, 1]],
       ['depth first search pre-order', bst.depthFirstSearchPreOrder(), [35, 21, 5, 1, 92, 49, 101]],
       ['depth first search post-order', bst.depthFirstSearchPostOrder(), [1, 5, 21, 49, 101, 92, 35]],
+      ['depth first search in-order', bst.depthFirstSearchInOrder(), [1, 5, 21, 35, 49, 92, 101]],
     ])('should return the expected %s result', (_, traversal: BSTNode[], expectedTraversal: number[]) => {
       const bfs = traversal.map(item => item?.value);
 
