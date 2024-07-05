@@ -7,14 +7,7 @@ export class MaxBinaryHeap {
   }
 
   public extractMax() {
-    if (!this.values.length) return null;
-    if (this.values.length === 1) return this.values.pop();
-
-    const max = this.values[0];
-    this.values[0] = this.values.pop() as number;
-    this.sinkDown(0);
-
-    return max;
+    return this.extract();
   }
 
   protected bubbleUp(index: number) {
@@ -56,6 +49,17 @@ export class MaxBinaryHeap {
 
     this.swap(index, swapIndex);
     this.sinkDown(swapIndex);
+  }
+
+  protected extract() {
+    if (!this.values.length) return null;
+    if (this.values.length === 1) return this.values.pop();
+
+    const value = this.values[0];
+    this.values[0] = this.values.pop() as number;
+    this.sinkDown(0);
+
+    return value;
   }
 
   protected swap(idx1: number, idx2: number) {
