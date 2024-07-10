@@ -6,8 +6,8 @@
   "scripts": {
     "test": "jest",
     "test:watch": "jest --watch",
-    "lint": "eslint --cache --ext .js,.ts,.json",
-    "lint:fix": "eslint --fix --cache --ext .js,.ts,.jsx,.json --format node_modules/eslint-formatter-pretty src"
+    "lint": "eslint --cache --ext .js,.ts,.json --format table src",
+    "lint:fix": "eslint --fix --cache --ext .js,.ts,.jsx,.json --format table src"
   },
   "keywords": [
     "fmsb",
@@ -30,6 +30,7 @@
     "eslint": "^8.57.0",
     "eslint-config-airbnb-base": "^15.0.0",
     "eslint-config-airbnb-typescript": "^18.0.0",
+    "eslint-formatter-table": "^7.32.1",
     "eslint-plugin-deprecation": "^3.0.0",
     "eslint-plugin-import": "^2.29.1",
     "eslint-plugin-prettier": "^5.1.3",
