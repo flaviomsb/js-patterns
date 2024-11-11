@@ -1,3 +1,5 @@
+import { describe, it, expect } from '@jest/globals';
+
 describe('comparison', () => {
   it('must be true when "0" == 0', () => {
     // @ts-ignore

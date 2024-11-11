@@ -1,3 +1,5 @@
+import { describe, it, expect } from '@jest/globals';
+
 describe('destructuring', () => {
   it('should destruct [, a, b] = [10, 20]', () => {
     // @ts-ignore
