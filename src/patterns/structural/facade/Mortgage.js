@@ -16,8 +16,12 @@ class Mortgage {
     const hasGoodScore = CreditScore.hasGoodScore(creditScore);
     const backgroundChecked = Background.check({ isEmployed, clientYears });
 
-    const result = (verified && hasGoodScore && backgroundChecked) ? 'approved' : 'denied';
-    const formattedAmount = Intl.NumberFormat('en-US', { style: 'currency', currency: 'USD' }).format(amount);
+    const result =
+      verified && hasGoodScore && backgroundChecked ? 'approved' : 'denied';
+    const formattedAmount = globalThis.Intl.NumberFormat('en-US', {
+      style: 'currency',
+      currency: 'USD',
+    }).format(amount);
 
     return `${this.#borrower.name} has been ${result} for a ${formattedAmount} mortgage`;
   }
