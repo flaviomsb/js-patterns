@@ -1,3 +1,4 @@
+import { describe, test, expect } from '@jest/globals';
 import Dragon from './Dragon';
 
 describe('Decorator pattern', () => {

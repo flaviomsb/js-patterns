@@ -1,3 +1,4 @@
+import { describe, test, expect } from '@jest/globals';
 import Person from './Person';
 import ResponsiblePerson from './ResponsiblePerson';
 

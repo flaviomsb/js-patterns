@@ -1,3 +1,4 @@
+import { describe, test, expect } from '@jest/globals';
 import addBook, { bookList, bookMap } from './booksLib';
 
 describe('Flyweight pattern', () => {
