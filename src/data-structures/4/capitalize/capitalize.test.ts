@@ -1,3 +1,4 @@
+import { test, expect } from '@jest/globals';
 import capitalize from './capitalize';
 
 test('Capitalize is a function', () => {

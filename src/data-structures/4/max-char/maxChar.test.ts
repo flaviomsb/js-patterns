@@ -1,3 +1,4 @@
+import { describe, test, expect } from '@jest/globals';
 import maxChar from './maxChar';
 
 describe('Max char', () => {

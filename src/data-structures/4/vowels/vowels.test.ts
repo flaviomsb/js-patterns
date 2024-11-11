@@ -1,3 +1,4 @@
+import { describe, test, expect } from '@jest/globals';
 import vowels, { vowelsRegex } from './vowels';
 
 describe('vowels', () => {

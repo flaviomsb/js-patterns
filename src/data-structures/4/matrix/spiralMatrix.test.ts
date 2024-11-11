@@ -1,3 +1,4 @@
+import { describe, test, expect } from '@jest/globals';
 import spiralMatrix from './spiralMatrix';
 
 describe('Spiral matrix', () => {
