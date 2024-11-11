@@ -1,8 +1,9 @@
+import { describe, test, expect } from '@jest/globals';
 import Mediator from './Mediator';
 import Participant from './Participant';
 
 describe('mediator', () => {
-  it('should handle number alerts', () => {
+  test('should handle number alerts', () => {
     const mediator = new Mediator();
     const p1 = new Participant(mediator);
     const p2 = new Participant(mediator);

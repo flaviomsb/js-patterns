@@ -1,3 +1,4 @@
+import { describe, test, expect } from '@jest/globals';
 import Game from './Game';
 import Rat from './Rat';
 
