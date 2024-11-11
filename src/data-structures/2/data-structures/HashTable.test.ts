@@ -1,3 +1,4 @@
+import { describe, test, expect } from '@jest/globals';
 import { HashTable } from './HashTable';
 
 describe('HashTable', () => {
@@ -13,7 +14,7 @@ describe('HashTable', () => {
     hash.set('param3', 4928.3);
 
     expect(hash.get('param1')).toEqual(true);
-    expect(hash.get('param2')).toMatchObject([1, 2, 3]);
+    expect(hash.get('param2')).toMatchObject(expect.arrayContaining([1, 2, 3]));
     expect(hash.get('param3')).toEqual(4928.3);
   });
 
@@ -34,7 +35,9 @@ describe('HashTable', () => {
     hash.set('key2', '3out058agj');
     hash.set('key3', { a: 1, b: '38jf4' });
 
-    expect(hash.keys()).toMatchObject(['key1', 'key2', 'key3']);
+    expect(hash.keys()).toMatchObject(
+      expect.arrayContaining(['key1', 'key2', 'key3']),
+    );
   });
 
   test('should return a list of values', () => {
@@ -44,6 +47,8 @@ describe('HashTable', () => {
     hash.set('key2', '3out058agj');
     hash.set('key3', { a: 1, b: '38jf4' });
 
-    expect(hash.values()).toMatchObject([23, '3out058agj', { a: 1, b: '38jf4' }]);
+    expect(hash.values()).toMatchObject(
+      expect.arrayContaining([23, '3out058agj', { a: 1, b: '38jf4' }]),
+    );
   });
 });

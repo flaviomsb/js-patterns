@@ -1,3 +1,4 @@
+import { describe, test, expect } from '@jest/globals';
 import merge from './merge';
 
 describe('merge', () => {

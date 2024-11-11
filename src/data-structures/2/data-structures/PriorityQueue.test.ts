@@ -1,3 +1,4 @@
+import { describe, test, expect } from '@jest/globals';
 import { PriorityLevel, PriorityNode } from './PriorityNode';
 import { PriorityQueue } from './PriorityQueue';
 
@@ -13,11 +14,13 @@ describe('PriorityQueue', () => {
     queue.insert(239.76, PriorityLevel.High);
     queue.insert(32, PriorityLevel.Medium);
 
-    expect(queue.nodes).toMatchObject(expect.arrayContaining([
-      new PriorityNode(239.76, PriorityLevel.High),
-      new PriorityNode(120, PriorityLevel.Low),
-      new PriorityNode(32, PriorityLevel.Medium),
-    ]));
+    expect(queue.nodes).toMatchObject(
+      expect.arrayContaining([
+        new PriorityNode(239.76, PriorityLevel.High),
+        new PriorityNode(120, PriorityLevel.Low),
+        new PriorityNode(32, PriorityLevel.Medium),
+      ]),
+    );
   });
 
   test('should extract according to the priority level', () => {
@@ -29,8 +32,23 @@ describe('PriorityQueue', () => {
     queue.insert(239.76, PriorityLevel.High);
     queue.insert(32, PriorityLevel.Medium);
 
-    expect(queue.extract()).toMatchObject(new PriorityNode(239.76, PriorityLevel.High));
-    expect(queue.extract()).toMatchObject(new PriorityNode(32, PriorityLevel.Medium));
-    expect(queue.extract()).toMatchObject(new PriorityNode(120, PriorityLevel.Low));
+    expect(queue.extract()).toMatchObject(
+      new PriorityNode(239.76, PriorityLevel.High) as unknown as Record<
+        string,
+        unknown
+      >,
+    );
+    expect(queue.extract()).toMatchObject(
+      new PriorityNode(32, PriorityLevel.Medium) as unknown as Record<
+        string,
+        unknown
+      >,
+    );
+    expect(queue.extract()).toMatchObject(
+      new PriorityNode(120, PriorityLevel.Low) as unknown as Record<
+        string,
+        unknown
+      >,
+    );
   });
 });

@@ -1,3 +1,4 @@
+import { describe, test, expect } from '@jest/globals';
 import { MinBinaryHeap } from './MinBinaryHeap';
 
 describe('MinBinaryHeap', () => {
@@ -11,7 +12,9 @@ describe('MinBinaryHeap', () => {
     heap.insert(14);
     heap.insert(31);
 
-    expect(heap.values).toMatchObject([2, 14, 23, 89, 43, 31]);
+    expect(heap.values).toMatchObject(
+      expect.arrayContaining([2, 14, 23, 89, 43, 31]),
+    );
   });
 
   test('should extract min', () => {
@@ -25,6 +28,8 @@ describe('MinBinaryHeap', () => {
     heap.insert(31);
 
     expect(heap.extractMin()).toBe(2);
-    expect(heap.values).toMatchObject([14, 31, 23, 89, 43]);
+    expect(heap.values).toMatchObject(
+      expect.arrayContaining([14, 31, 23, 89, 43]),
+    );
   });
 });

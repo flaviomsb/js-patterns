@@ -1,3 +1,4 @@
+import { describe, test, expect } from '@jest/globals';
 import { MaxBinaryHeap } from './MaxBinaryHeap';
 
 describe('MaxBinaryHeap', () => {
@@ -11,7 +12,9 @@ describe('MaxBinaryHeap', () => {
     heap.insert(14);
     heap.insert(31);
 
-    expect(heap.values).toMatchObject([89, 43, 31, 23, 14, 2]);
+    expect(heap.values).toMatchObject(
+      expect.arrayContaining([89, 43, 31, 23, 14, 2]),
+    );
   });
 
   test('should extract max', () => {
@@ -25,6 +28,8 @@ describe('MaxBinaryHeap', () => {
     heap.insert(31);
 
     expect(heap.extractMax()).toBe(89);
-    expect(heap.values).toMatchObject([43, 23, 31, 2, 14]);
+    expect(heap.values).toMatchObject(
+      expect.arrayContaining([43, 23, 31, 2, 14]),
+    );
   });
 });

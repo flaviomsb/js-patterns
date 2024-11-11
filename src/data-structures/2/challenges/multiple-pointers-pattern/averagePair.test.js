@@ -1,3 +1,4 @@
+import { describe, test, expect } from '@jest/globals';
 import averagePair from './averagePair';
 
 describe('averagePair', () => {

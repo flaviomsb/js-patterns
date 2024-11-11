@@ -1,3 +1,4 @@
+import { describe, test, expect } from '@jest/globals';
 import sameFrequency from './sameFrequency';
 
 describe('sameFrequency', () => {
