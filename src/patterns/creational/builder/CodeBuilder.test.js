@@ -1,3 +1,4 @@
+import { describe, test, expect } from '@jest/globals';
 import CodeBuilder from './CodeBuilder';
 
 describe('CodeBuilder', () => {

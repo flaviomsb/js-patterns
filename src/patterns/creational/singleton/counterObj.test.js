@@ -1,3 +1,4 @@
+import { describe, test, expect } from '@jest/globals';
 import counterObj from './counterObj';
 
 describe('Counter object as singleton', () => {

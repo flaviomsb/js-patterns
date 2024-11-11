@@ -1,3 +1,4 @@
+import { describe, test, expect } from '@jest/globals';
 import Line from './Line';
 import Point from './Point';
 
