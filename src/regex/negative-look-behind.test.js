@@ -1,3 +1,5 @@
+import { describe, test, expect } from '@jest/globals';
+
 describe('negative look behind (?<=exp)', () => {
   test('match items whose price do not end with .99', () => {
     const text = `

@@ -1,3 +1,5 @@
+import { describe, test, expect } from '@jest/globals';
+
 describe('positive look ahead (?=exp)', () => {
   test.each([
     ['Av!1', true],

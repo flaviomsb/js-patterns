@@ -1,3 +1,4 @@
+import { describe, test, expect } from '@jest/globals';
 /**
  * 1 - Write a pattern to match one or more digits.
  * In the below text, the pattern should match 1, 123, 12345.

@@ -1,3 +1,5 @@
+import { describe, test, expect } from '@jest/globals';
+
 describe('regex match', () => {
   test('finding first digit index at string', () => {
     const match = 'zip code 98023. Phone number 555-5555'.match(/\d+/);

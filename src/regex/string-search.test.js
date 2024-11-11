@@ -1,3 +1,5 @@
+import { describe, test, expect } from '@jest/globals';
+
 describe('regex string search', () => {
   test('finding first digit index at string', () => {
     expect('zip code 98023. Phone number 555-5555'.search(/\d+?/)).toBe(9);

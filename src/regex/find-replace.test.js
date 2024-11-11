@@ -1,3 +1,5 @@
+import { describe, test, expect } from '@jest/globals';
+
 describe('regex replace', () => {
   const text = 'Deliver date: 20220603, Purchase date: 20220601';
   const regex = /(?<year>\d{4})(?<month>\d{2})(?<day>\d{2})/g;

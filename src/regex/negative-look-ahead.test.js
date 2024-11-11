@@ -1,3 +1,5 @@
+import { describe, test, expect } from '@jest/globals';
+
 describe('negative look ahead (?!exp)', () => {
   test('List all cars not made by Honda', () => {
     const text = `
