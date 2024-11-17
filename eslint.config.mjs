@@ -20,15 +20,6 @@ export default tseslint.config({
     'no-plusplus': 0,
     'no-const-assign': 'error',
     'prefer-const': 'error',
-
-    'max-len': [
-      'error',
-      {
-        code: 110,
-        tabWidth: 2,
-      },
-    ],
-
     '@typescript-eslint/no-explicit-any': 0,
     '@typescript-eslint/ban-ts-comment': 0,
   },
