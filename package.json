@@ -39,7 +39,7 @@
   },
   "dependencies": {
     "@tensorflow/tfjs": "^4.22.0",
-    "globals": "^15.13.0",
+    "globals": "^15.14.0",
     "lodash.capitalize": "^4.2.1"
   },
   "prettier": {
