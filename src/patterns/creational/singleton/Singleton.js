@@ -1,10 +1,9 @@
 class Singleton {
   constructor() {
-    const instance = this.constructor.instancel;
+    const instance = this.constructor.instance;
 
     if (instance) {
-      // eslint-disable-next-line no-constructor-return
-      return instance;
+      return;
     }
 
     this.constructor.instance = this;
