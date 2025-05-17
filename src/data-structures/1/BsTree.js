@@ -19,18 +19,22 @@ class BsTree {
     }
 
     let temp = this.root;
-    // eslint-disable-next-line no-constant-condition
+
     while (true) {
       if (newNode.value === temp.value) return undefined;
-      if (newNode.value < temp.value) { // check if go left
-        if (temp.left === null) { // if node does not exists then create it
+      if (newNode.value < temp.value) {
+        // check if go left
+        if (temp.left === null) {
+          // if node does not exists then create it
           temp.left = newNode;
           return this;
         }
 
         temp = temp.left; // otherwise, keep going left
-      } else { // then go to the right
-        if (temp.right === null) { // if node does not exists then create it
+      } else {
+        // then go to the right
+        if (temp.right === null) {
+          // if node does not exists then create it
           temp.right = newNode;
           return this;
         }

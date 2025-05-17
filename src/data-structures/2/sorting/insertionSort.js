@@ -1,5 +1,3 @@
-/* eslint-disable no-var */
-/* eslint-disable vars-on-top */
 /**
  * Receives an unsorted array and returns a sorted version of it using
  * the selection sort algorithm
@@ -17,7 +15,6 @@ export default function insertionSort(arr) {
       newArr[j + 1] = newArr[j];
     }
 
-    // eslint-disable-next-line block-scoped-var
     newArr[j + 1] = current;
   }
 

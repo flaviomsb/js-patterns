@@ -14,7 +14,6 @@ describe('PriorityQueue', () => {
     );
     expect(queue.size()).toBe(4);
     expect(queue.toString()).toEqual(
-      // eslint-disable-next-line max-len
       '{"value":"handle","priority":1},{"value":"process","priority":1},{"value":"call","priority":2},{"value":"flush","priority":3}',
     );
   });

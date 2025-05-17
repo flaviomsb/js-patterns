@@ -1,4 +1,3 @@
-/* eslint-disable no-param-reassign */
 const Action = Object.freeze({
   deposit: 'deposit',
   withdraw: 'withdraw',
@@ -25,5 +24,4 @@ class Account {
   }
 }
 
-// eslint-disable-next-line no-restricted-exports
 export { Account as default, Action };

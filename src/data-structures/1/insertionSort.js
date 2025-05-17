@@ -1,5 +1,3 @@
-/* eslint-disable no-var */
-/* eslint-disable vars-on-top */
 export default function insertionSort(...values) {
   const items = [...values];
   let temp;
@@ -9,7 +7,7 @@ export default function insertionSort(...values) {
     for (var j = i - 1; items[j] > temp && j > -1; j--) {
       items[j + 1] = items[j];
     }
-    // eslint-disable-next-line block-scoped-var
+
     items[j + 1] = temp;
   }
 
