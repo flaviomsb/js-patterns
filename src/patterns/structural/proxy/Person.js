@@ -1,4 +1,3 @@
-/* eslint-disable class-methods-use-this */
 class Person {
   constructor(age = 0) {
     this.age = age;

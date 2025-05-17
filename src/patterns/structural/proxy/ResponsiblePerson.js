@@ -23,7 +23,6 @@ class ResponsiblePerson {
     return this.person.drive();
   }
 
-  // eslint-disable-next-line class-methods-use-this
   drinkAndDrive() {
     return 'dead';
   }
