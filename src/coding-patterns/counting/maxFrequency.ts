@@ -16,22 +16,10 @@
  * Explanation: The number 5 appears three times, which is the highest frequency. So, the total frequency is 3.
  **/
 
-type NumberFrequencyDict = {
-  [key: number]: number;
-};
-
-function frequency(nums: number[]) {
-  return nums.reduce(
-    (freq: NumberFrequencyDict, num: number): NumberFrequencyDict => ({
-      ...freq,
-      [num]: freq[num] ? freq[num] + 1 : 1,
-    }),
-    {} as NumberFrequencyDict,
-  );
-}
+import { numbersFrequency } from './numbersFrequency';
 
 export default function maxFrequency(nums: number[]): number {
-  const frequencies = Object.values(frequency(nums));
+  const frequencies = Object.values(numbersFrequency(nums));
   const max = Math.max(...frequencies);
 
   return frequencies.reduce((sum: number, freq: number): number => {
