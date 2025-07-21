@@ -1,5 +1,5 @@
 import { describe, test, expect } from '@jest/globals';
-import maxFrequency from './maxFrequency';
+import maxFrequency from '../maxFrequency';
 
 describe('maxFrequency', () => {
   test.each([
