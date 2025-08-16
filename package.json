@@ -24,7 +24,7 @@
     "@jest/globals": "^30.0.5",
     "@types/jest": "^30.0.0",
     "@types/lodash.capitalize": "^4.2.9",
-    "@types/node": "^24.2.1",
+    "@types/node": "^24.3.0",
     "babel-jest": "^30.0.5",
     "eslint": "^9.33.0",
     "eslint-formatter-table": "^7.32.1",
