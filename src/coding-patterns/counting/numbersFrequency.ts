@@ -1,6 +1,4 @@
-type NumberFrequencyDict = {
-  [key: number]: number;
-};
+type NumberFrequencyDict = Record<number, number>;
 
 export function numbersFrequency(nums: number[]) {
   return nums.reduce(
