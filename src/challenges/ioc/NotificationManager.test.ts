@@ -7,9 +7,7 @@ describe('NotificationManager IoC', () => {
     const emailService = new EmailService();
     const emailManager = new NotificationManager(emailService);
 
-    const spiedSendNotification = jest
-      .spyOn(emailService, 'sendNotification')
-      .mockImplementation((_message: string) => {});
+    const spiedSendNotification = jest.spyOn(emailService, 'sendNotification');
 
     emailManager.notify('email message sample');
 
