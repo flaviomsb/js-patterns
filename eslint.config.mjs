@@ -22,7 +22,6 @@ export default defineConfig(
       },
     },
     rules: {
-      ...eslint.configs.recommended.rules,
       'consistent-return': 1,
       'no-console': 'off',
       'no-restricted-syntax': 'off',
