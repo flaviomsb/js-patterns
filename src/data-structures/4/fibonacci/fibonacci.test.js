@@ -10,7 +10,7 @@ describe('fibonacci', () => {
   ];
 
   [iterativeFibonacci, fibonacci, recursiveFibonacci].forEach((fn) => {
-    describe(fn.name, () => {
+    describe(`${fn.name}`, () => {
       test.each(numbers)('Fibonacci value of %s is %s', (num, expectedResult) => {
         expect(fn(num)).toEqual(expectedResult);
       });

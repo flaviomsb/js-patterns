@@ -3,7 +3,7 @@ import Line from './Line';
 import Point from './Point';
 
 describe('Prototype', () => {
-  test('test', () => {
+  test('should deepCopy data from line1 into line2', () => {
     const line1 = new Line(
       new Point(3, 3),
       new Point(10, 10),

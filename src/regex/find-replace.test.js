@@ -13,7 +13,8 @@ describe('regex replace', () => {
   });
 
   test('replace matches with a replace pattern as callback', () => {
-    const replacePattern = (match, year, month, day) => `${month}/${day}/${year}`;
+    const replacePattern = (_match, year, month, day) =>
+      `${month}/${day}/${year}`;
 
     expect(text.replace(regex, replacePattern)).toEqual(
       'Deliver date: 06/03/2022, Purchase date: 06/01/2022',

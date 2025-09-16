@@ -5,7 +5,7 @@
 export default function steps(n: number) {
   [...Array(n).keys()]
     .map((v) => v + 1)
-    .forEach((value, index, arr) => {
+    .forEach((value, _index, arr) => {
       console.log('#'.repeat(value).concat(' '.repeat(arr.length - value)));
     });
 }
@@ -19,7 +19,7 @@ export function stepsAlt(n: number) {
     let stair = '';
 
     for (let column = 0; column < n; column++) {
-      stair += (column <= row) ? '#' : ' ';
+      stair += column <= row ? '#' : ' ';
     }
 
     console.log(stair);

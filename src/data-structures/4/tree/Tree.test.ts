@@ -23,7 +23,7 @@ describe('Tree', () => {
     expect(letters).toEqual(['a', 'b', 'c', 'd']);
   });
 
-  test('Can traverse DF', () => {
+  test('can traverse DF', () => {
     const letters: Array<string> = [];
     const tree = new Tree<string>();
     tree.root = new Node('a');
@@ -52,7 +52,7 @@ describe('Tree', () => {
     expect(tree.levelWidth()).toEqual([1, 3, 2]);
   });
 
-  test('levelWidth returns number of nodes at widest point', () => {
+  test('levelWidth returns number of nodes added to root and to only one child', () => {
     const root = new Node(0);
     root.add(1);
     root.children[0].add(2);
