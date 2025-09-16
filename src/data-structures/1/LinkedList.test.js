@@ -213,7 +213,9 @@ describe('Linked List', () => {
     });
 
     test('when index is not valid', () => {
-      expect(() => linkedList.set(3, 'Marcelo')).toThrow('index: 3 is out of bounds');
+      expect(() => linkedList.set(3, 'Marcelo')).toThrow(
+        'index: 3 is out of bounds',
+      );
     });
   });
 
@@ -231,7 +233,9 @@ describe('Linked List', () => {
     });
 
     test('when index is not valid', () => {
-      expect(() => linkedList.insert(5, 'San Antonio')).toThrow('index: 5 is out of bounds');
+      expect(() => linkedList.insert(5, 'San Antonio')).toThrow(
+        'index: 5 is out of bounds',
+      );
     });
   });
 
@@ -254,7 +258,11 @@ describe('Linked List', () => {
 
   describe('reverse', () => {
     test('when list has two or more nodes', () => {
-      const linkedList = LinkedList.fromValues('Texas', 'Montana', 'North Dakota');
+      const linkedList = LinkedList.fromValues(
+        'Texas',
+        'Montana',
+        'North Dakota',
+      );
 
       expect(linkedList.head).toMatchObject({
         value: 'Texas',

@@ -7,6 +7,8 @@ describe('positive look ahead (?=exp)', () => {
     ['!cA3R', true],
     ['Av&1', false],
   ])('Password %s validates to %s', (password, valid) => {
-    expect(/^(?=.*[A-Z])(?=.*[a-z])(?=.*\d)(?=.*[!?^$]).+$/g.test(password)).toBe(valid);
+    expect(
+      /^(?=.*[A-Z])(?=.*[a-z])(?=.*\d)(?=.*[!?^$]).+$/g.test(password),
+    ).toBe(valid);
   });
 });

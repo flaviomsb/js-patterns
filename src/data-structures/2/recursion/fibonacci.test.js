@@ -10,4 +10,4 @@ describe('Fibonacci function', () => {
   ])('fibonacci value of %s must be %s', (num, expectedResult) => {
     expect(fibonacci(num)).toEqual(expectedResult);
   });
-})
+});

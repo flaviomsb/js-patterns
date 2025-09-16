@@ -63,7 +63,9 @@ describe('Graph', () => {
     graph.addVertex('X');
     graph.addEdge('A', 'X');
 
-    expect(() => graph.removeEdge('A', 'Z')).toThrow('Vertex "Z" does not exist');
+    expect(() => graph.removeEdge('A', 'Z')).toThrow(
+      'Vertex "Z" does not exist',
+    );
   });
 
   test('remove vertex', () => {
@@ -75,7 +77,9 @@ describe('Graph', () => {
     graph.addEdge('B', 'C');
     graph.addEdge('A', 'C');
 
-    expect(graph.removeVertex('B')).toMatchObject({ adjacencyList: { A: ['C'], C: ['A'] } });
+    expect(graph.removeVertex('B')).toMatchObject({
+      adjacencyList: { A: ['C'], C: ['A'] },
+    });
     expect(graph.removeVertex('C')).toMatchObject({ adjacencyList: { A: [] } });
   });
 });

@@ -204,7 +204,9 @@ describe('Linked List', () => {
     });
 
     test('when index is not valid', () => {
-      expect(() => linkedList.set(3, 'Marcelo')).toThrow('index: 3 is out of bounds');
+      expect(() => linkedList.set(3, 'Marcelo')).toThrow(
+        'index: 3 is out of bounds',
+      );
     });
   });
 
@@ -219,15 +221,22 @@ describe('Linked List', () => {
 
       expect(linkedList.size()).toBe(4);
       expect(linkedList.get(1)).toMatchObject({ value: 'Houston' });
-      expect(linkedList.toString()).toEqual('Austin -> Houston -> Dallas -> El Paso -> ');
+      expect(linkedList.toString()).toEqual(
+        'Austin -> Houston -> Dallas -> El Paso -> ',
+      );
     });
 
     test('when inserting at the head', () => {
       linkedList.insert(0, 'McAllen');
 
       expect(linkedList.size()).toBe(5);
-      expect(linkedList.head).toMatchObject({ value: 'McAllen', next: { value: 'Austin' } });
-      expect(linkedList.toString()).toEqual('McAllen -> Austin -> Houston -> Dallas -> El Paso -> ');
+      expect(linkedList.head).toMatchObject({
+        value: 'McAllen',
+        next: { value: 'Austin' },
+      });
+      expect(linkedList.toString()).toEqual(
+        'McAllen -> Austin -> Houston -> Dallas -> El Paso -> ',
+      );
     });
 
     test('when inserting at the tail', () => {
@@ -235,22 +244,39 @@ describe('Linked List', () => {
 
       expect(linkedList.size()).toBe(6);
       expect(linkedList.tail).toMatchObject({ value: 'Hunt', next: null });
-      expect(linkedList.toString()).toEqual('McAllen -> Austin -> Houston -> Dallas -> El Paso -> Hunt -> ');
+      expect(linkedList.toString()).toEqual(
+        'McAllen -> Austin -> Houston -> Dallas -> El Paso -> Hunt -> ',
+      );
     });
 
     test('when index is not valid', () => {
-      expect(() => linkedList.insert(6, 'San Antonio')).toThrow('index: 6 is out of bounds');
+      expect(() => linkedList.insert(6, 'San Antonio')).toThrow(
+        'index: 6 is out of bounds',
+      );
     });
   });
 
   describe('remove', () => {
-    const linkedList = SinglyLinkedList.from('John', 'Homer', 'Paul', 'Joe', 'Rick', 'Tom');
+    const linkedList = SinglyLinkedList.from(
+      'John',
+      'Homer',
+      'Paul',
+      'Joe',
+      'Rick',
+      'Tom',
+    );
 
     test('when removing with a valid index', () => {
       expect(linkedList.size()).toBe(6);
-      expect(linkedList.get(1)).toMatchObject({ value: 'Homer', next: { value: 'Paul' } });
+      expect(linkedList.get(1)).toMatchObject({
+        value: 'Homer',
+        next: { value: 'Paul' },
+      });
 
-      expect(linkedList.remove(1)).toMatchObject({ value: 'Homer', next: null });
+      expect(linkedList.remove(1)).toMatchObject({
+        value: 'Homer',
+        next: null,
+      });
       expect(linkedList.size()).toBe(5);
     });
 
@@ -272,13 +298,22 @@ describe('Linked List', () => {
 
   describe('reverse', () => {
     test('when list has two or more nodes', () => {
-      const linkedList = SinglyLinkedList.from('Texas', 'Montana', 'North Dakota', 'Alabama');
+      const linkedList = SinglyLinkedList.from(
+        'Texas',
+        'Montana',
+        'North Dakota',
+        'Alabama',
+      );
 
-      expect(linkedList.toString()).toEqual('Texas -> Montana -> North Dakota -> Alabama -> ');
+      expect(linkedList.toString()).toEqual(
+        'Texas -> Montana -> North Dakota -> Alabama -> ',
+      );
 
       linkedList.reverse();
 
-      expect(linkedList.toString()).toEqual('Alabama -> North Dakota -> Montana -> Texas -> ');
+      expect(linkedList.toString()).toEqual(
+        'Alabama -> North Dakota -> Montana -> Texas -> ',
+      );
     });
   });
 });

@@ -7,7 +7,10 @@ describe('twoSum', () => {
     [[3, 2, 4], 6, [1, 2]],
     [[3, 3], 6, [0, 1]],
     [[2, 3, 6], 4, []],
-  ])('should find the indexes in array %s that sum %s', (nums, target, output) => {
-    expect(twoSum(nums, target)).toEqual(output);
-  });
+  ])(
+    'should find the indexes in array %s that sum %s',
+    (nums, target, output) => {
+      expect(twoSum(nums, target)).toEqual(output);
+    },
+  );
 });

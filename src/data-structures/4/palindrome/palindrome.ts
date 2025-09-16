@@ -9,5 +9,7 @@ export default function palindrome(str: string | null | undefined) {
 
   // Could have simply used a reverse(str) === str from
   // the string reversal exercise
-  return str.split('').every((char, index) => char === str[(str.length - 1) - index]);
+  return str
+    .split('')
+    .every((char, index) => char === str[str.length - 1 - index]);
 }

@@ -10,5 +10,5 @@ export default function areThereDuplicates(...values) {
 
   const freq = frequency(values);
 
-  return !!Object.entries(freq).filter((([, v]) => v > 1)).length;
+  return !!Object.entries(freq).filter(([, v]) => v > 1).length;
 }

@@ -11,7 +11,10 @@ describe('Palindrome', () => {
     [undefined, false],
     [null, false],
     ['', true],
-  ])('Testing if %s is a palindrome', (str: string | null | undefined, expectedResult) => {
-    expect(palindrome(str)).toEqual(expectedResult);
-  });
+  ])(
+    'Testing if %s is a palindrome',
+    (str: string | null | undefined, expectedResult) => {
+      expect(palindrome(str)).toEqual(expectedResult);
+    },
+  );
 });

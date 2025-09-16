@@ -9,9 +9,7 @@ class CodeBuilder {
   }
 
   addField(name) {
-    this.#class.fields.push(
-      new Field(name),
-    );
+    this.#class.fields.push(new Field(name));
     return this;
   }
 

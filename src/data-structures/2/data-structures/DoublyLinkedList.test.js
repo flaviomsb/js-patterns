@@ -37,12 +37,15 @@ describe('Doubly Linked List', () => {
       [2, 1, { value: 2000 }],
       [1, 0, { value: 1000 }],
       [0, 0, null],
-    ])('List length before pop: %s and length after: %s', (lengthBefore, lengthAfter, node) => {
-      const method = !node ? 'toBe' : 'toMatchObject';
-      expect(doublyLinkedList.length).toBe(lengthBefore);
-      expect(doublyLinkedList.pop())[method](node);
-      expect(doublyLinkedList.length).toBe(lengthAfter);
-    });
+    ])(
+      'List length before pop: %s and length after: %s',
+      (lengthBefore, lengthAfter, node) => {
+        const method = !node ? 'toBe' : 'toMatchObject';
+        expect(doublyLinkedList.length).toBe(lengthBefore);
+        expect(doublyLinkedList.pop())[method](node);
+        expect(doublyLinkedList.length).toBe(lengthAfter);
+      },
+    );
   });
 
   test('shift', () => {

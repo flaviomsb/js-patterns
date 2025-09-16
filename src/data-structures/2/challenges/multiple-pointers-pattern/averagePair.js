@@ -12,10 +12,11 @@ export default function averagePair(values, target) {
   let j = values.length - 1;
 
   while (i < j) {
-    const average = ((values[i] + values[j]) / 2);
+    const average = (values[i] + values[j]) / 2;
     if (average === target) {
       return true;
-    } if (average < target) {
+    }
+    if (average < target) {
       i++;
     } else {
       j--;

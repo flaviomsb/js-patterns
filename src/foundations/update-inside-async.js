@@ -12,7 +12,7 @@ async function update(callback) {
   ];
 
   await update(() => {
-    list.forEach(item => {
+    list.forEach((item) => {
       item.data **= 2;
     });
   });

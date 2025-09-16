@@ -25,7 +25,11 @@ describe('closures', () => {
     });
 
     test('must display German formatting for de-DE locale', () => {
-      const total = cart({ subTotal: 120.4, locale: 'de-DE', currency: 'EUR' }).grandTotal();
+      const total = cart({
+        subTotal: 120.4,
+        locale: 'de-DE',
+        currency: 'EUR',
+      }).grandTotal();
       expect(total).toEqual('135,21 €');
     });
 

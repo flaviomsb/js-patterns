@@ -12,9 +12,7 @@ export function createBook({ title, author, isbn }) {
   return book;
 }
 
-export default function addBook({
-  title, author, isbn, availability, sales,
-}) {
+export default function addBook({ title, author, isbn, availability, sales }) {
   const book = {
     ...createBook({ title, author, isbn }),
     sales,

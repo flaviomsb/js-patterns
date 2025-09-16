@@ -12,7 +12,9 @@
  * (Which is one of the compilation stages btw)
  */
 
-console.log('I would like to be printed out but the syntax error below won\'t let me');
+console.log(
+  "I would like to be printed out but the syntax error below won't let me",
+);
 
 // Uncomment the line below before running this file
 // let a = . 4;

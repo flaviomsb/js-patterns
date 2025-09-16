@@ -10,15 +10,15 @@ describe('CodeBuilder', () => {
 
   test('person test', () => {
     const cb = new CodeBuilder('Person');
-    cb.addField('name')
-      .addField('age');
+    cb.addField('name').addField('age');
 
-    expect(cb.toString())
-      .toEqual('class Person {\n'
-        + '  constructor(name, age) {\n'
-        + '    this.name = name;\n'
-        + '    this.age = age;\n'
-        + '  }\n'
-        + '}');
+    expect(cb.toString()).toEqual(
+      'class Person {\n' +
+        '  constructor(name, age) {\n' +
+        '    this.name = name;\n' +
+        '    this.age = age;\n' +
+        '  }\n' +
+        '}',
+    );
   });
 });

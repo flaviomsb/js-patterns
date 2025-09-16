@@ -8,7 +8,8 @@ export default function vowels(str: string) {
     .toLowerCase()
     .split('')
     .reduce(
-      (count, char) => (['a', 'e', 'i', 'o', 'u'].includes(char) ? count + 1 : count),
+      (count, char) =>
+        ['a', 'e', 'i', 'o', 'u'].includes(char) ? count + 1 : count,
       0,
     );
 }

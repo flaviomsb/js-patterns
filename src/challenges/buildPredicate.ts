@@ -1,12 +1,21 @@
 export type SortDirection = 'ASC' | 'DESC';
-export type ComparisonOperator = '=' | '==' | '>' | '>=' | '<' | '<=' | '!=' | '<>' | 'IN';
+export type ComparisonOperator =
+  | '='
+  | '=='
+  | '>'
+  | '>='
+  | '<'
+  | '<='
+  | '!='
+  | '<>'
+  | 'IN';
 export type SingleCondition = [string, ComparisonOperator, any, boolean?];
 
 export interface LogicalCondition {
-  operator: 'AND' | 'OR',
+  operator: 'AND' | 'OR';
   limit?: number;
   distinct?: string;
-  sort?: [string, SortDirection],
+  sort?: [string, SortDirection];
   conditions: (SingleCondition | LogicalCondition)[];
 }
 
@@ -33,7 +42,13 @@ export function buildPredicate(conditions: Conditions) {
         return '';
       }
 
-      const { conditions: innerConditions, operator, distinct, sort, limit } = _conditions;
+      const {
+        conditions: innerConditions,
+        operator,
+        distinct,
+        sort,
+        limit,
+      } = _conditions;
 
       if (!innerConditions) {
         return '';
@@ -58,7 +73,7 @@ export function buildPredicate(conditions: Conditions) {
 
   let index = 0;
 
-  const queryString = buildClauses(conditions).replace(/\$/g, match => {
+  const queryString = buildClauses(conditions).replace(/\$/g, (match) => {
     const param = match + index;
     index++;
     return param;

@@ -11,14 +11,17 @@ const locales = [
 
 const localeValues = locales.map(({ value }) => value);
 
-
 export function transformTranslations(translatedNames, fallback = '') {
   const names = translatedNames.reduce(
     (prev, next) => ({ ...prev, [next.locale]: next.translation }),
     {},
   );
 
-  return localeValues.reduce((prev, locale) => ({
-    ...prev, [locale]: names[locale] ?? fallback,
-  }), {});
+  return localeValues.reduce(
+    (prev, locale) => ({
+      ...prev,
+      [locale]: names[locale] ?? fallback,
+    }),
+    {},
+  );
 }

@@ -10,18 +10,13 @@ describe('Counter', () => {
   });
 
   test('increment', () => {
-    Counter
-      .increment()
-      .increment()
-      .increment();
+    Counter.increment().increment().increment();
 
     expect(Counter.getCount()).toBe(3);
   });
 
   test('decrement', () => {
-    Counter
-      .decrement()
-      .decrement();
+    Counter.decrement().decrement();
 
     expect(Counter.getCount()).toBe(1);
   });

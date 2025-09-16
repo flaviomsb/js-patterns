@@ -22,7 +22,9 @@ class Class {
     if (this.#fields.length > 0) {
       const params = this.#fields.map((f) => f.name).join(', ');
       buffer.push(`  constructor(${params}) {\n`);
-      this.#fields.forEach((f) => buffer.push(`    this.${f.name} = ${f.name};\n`));
+      this.#fields.forEach((f) =>
+        buffer.push(`    this.${f.name} = ${f.name};\n`),
+      );
       buffer.push('  }\n');
     }
 

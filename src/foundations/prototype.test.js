@@ -8,7 +8,7 @@ describe('User prototype', () => {
     email: 'johndoe@email.com',
   });
 
-  test('check that userInfo is User\'s prototype', () => {
+  test("check that userInfo is User's prototype", () => {
     expect(Object.getPrototypeOf(user) === userInfo).toBeTruthy();
   });
 

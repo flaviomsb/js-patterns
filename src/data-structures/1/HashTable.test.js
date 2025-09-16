@@ -26,6 +26,8 @@ describe('Hash Table', () => {
     hashTable.set('last_name', 'Doe');
     hashTable.set('email', 'john.doe@email.com');
 
-    expect(hashTable.keys().sort()).toMatchObject(['first_name', 'last_name', 'email'].sort());
+    expect(hashTable.keys().sort()).toMatchObject(
+      ['first_name', 'last_name', 'email'].sort(),
+    );
   });
 });

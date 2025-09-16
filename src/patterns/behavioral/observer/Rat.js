@@ -2,15 +2,9 @@ class Rat {
   constructor(game) {
     this.game = game;
     this.attack = 1;
-    game.ratEnters.subscribe(
-      this.handleRatEnters.bind(this),
-    );
-    game.ratDies.subscribe(
-      this.handleRatDies.bind(this),
-    );
-    game.notifyRat.subscribe(
-      this.handleNotifyRat.bind(this),
-    );
+    game.ratEnters.subscribe(this.handleRatEnters.bind(this));
+    game.ratDies.subscribe(this.handleRatDies.bind(this));
+    game.notifyRat.subscribe(this.handleNotifyRat.bind(this));
     game.fireRatEnters(this);
   }
 

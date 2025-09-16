@@ -10,7 +10,10 @@ describe('sameFrequency', () => {
     [322, 532, false],
     [313, 113, false],
     [313, 133, true],
-  ])('Checking same frequency between %s and %s', (num1, num2, expectedResult) => {
-    expect(sameFrequency(num1, num2)).toBe(expectedResult);
-  });
+  ])(
+    'Checking same frequency between %s and %s',
+    (num1, num2, expectedResult) => {
+      expect(sameFrequency(num1, num2)).toBe(expectedResult);
+    },
+  );
 });

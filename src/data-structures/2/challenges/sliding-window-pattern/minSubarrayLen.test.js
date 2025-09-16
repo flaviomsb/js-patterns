@@ -10,7 +10,10 @@ describe('minSubarrayLen', () => {
     [[1, 4, 16, 22, 5, 7, 8, 9, 10], 55, 5],
     [[4, 3, 3, 8, 1, 2, 3], 11, 2],
     [[1, 4, 16, 22, 5, 7, 8, 9, 10], 95, 0],
-  ])('Min length of subarray from %s which sum is greater or equal to %s', (values, ref, expectedResult) => {
-    expect(minSubarrayLen(values, ref)).toBe(expectedResult);
-  });
+  ])(
+    'Min length of subarray from %s which sum is greater or equal to %s',
+    (values, ref, expectedResult) => {
+      expect(minSubarrayLen(values, ref)).toBe(expectedResult);
+    },
+  );
 });

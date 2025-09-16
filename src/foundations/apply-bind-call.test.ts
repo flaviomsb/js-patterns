@@ -16,8 +16,12 @@ describe('apply', () => {
       return `Hi ${this.name}, welcome to ${city}!`;
     }
 
-    expect(greet.apply(userA, ['Austin'])).toEqual('Hi John Doe, welcome to Austin!');
-    expect(greet.apply(userB, ['Mexico City'])).toEqual('Hi Jeffrey Doe, welcome to Mexico City!');
+    expect(greet.apply(userA, ['Austin'])).toEqual(
+      'Hi John Doe, welcome to Austin!',
+    );
+    expect(greet.apply(userB, ['Mexico City'])).toEqual(
+      'Hi Jeffrey Doe, welcome to Mexico City!',
+    );
   });
 });
 
@@ -35,8 +39,15 @@ describe('call', () => {
       tax: 8.9,
     };
 
-    function calculateFee(this: Taxable, amount: number, locale: string, currency: string) {
-      return Intl.NumberFormat(locale, { style: 'currency', currency }).format(amount * (this.tax / 100));
+    function calculateFee(
+      this: Taxable,
+      amount: number,
+      locale: string,
+      currency: string,
+    ) {
+      return Intl.NumberFormat(locale, { style: 'currency', currency }).format(
+        amount * (this.tax / 100),
+      );
     }
 
     expect(calculateFee.call(usa, 123.75, 'en-US', 'USD')).toEqual('$12.99');

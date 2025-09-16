@@ -15,9 +15,21 @@ import { describe, test, expect } from '@jest/globals';
  */
 describe('Currency symbol exercise', () => {
   test.each([
-    ['$', 'movie ticket: $15, popcorn: $8', 'movie ticket: ***$15***, popcorn: ***$8***'],
-    ['€', 'movie ticket: €15, popcorn: €8', 'movie ticket: ***€15***, popcorn: ***€8***'],
-    ['₹', 'movie ticket: ₹15, popcorn: ₹8', 'movie ticket: ***₹15***, popcorn: ***₹8***'],
+    [
+      '$',
+      'movie ticket: $15, popcorn: $8',
+      'movie ticket: ***$15***, popcorn: ***$8***',
+    ],
+    [
+      '€',
+      'movie ticket: €15, popcorn: €8',
+      'movie ticket: ***€15***, popcorn: ***€8***',
+    ],
+    [
+      '₹',
+      'movie ticket: ₹15, popcorn: ₹8',
+      'movie ticket: ***₹15***, popcorn: ***₹8***',
+    ],
   ])('wrap currency symbol %s around ***', (_, text, expectedResult) => {
     const regex = /(?<price>\p{Sc}\d+)/gu;
 

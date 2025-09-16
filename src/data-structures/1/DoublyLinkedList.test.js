@@ -38,12 +38,15 @@ describe('Doubly Linked List', () => {
       [2, 1, { value: 2000 }],
       [1, 0, { value: 1000 }],
       [0, 0, undefined],
-    ])('List length before pop: %s and length after: %s', (lengthBefore, lengthAfter, node) => {
-      const method = !node ? 'toBe' : 'toMatchObject';
-      expect(doublyLinkedList.length).toBe(lengthBefore);
-      expect(doublyLinkedList.pop())[method](node);
-      expect(doublyLinkedList.length).toBe(lengthAfter);
-    });
+    ])(
+      'List length before pop: %s and length after: %s',
+      (lengthBefore, lengthAfter, node) => {
+        const method = !node ? 'toBe' : 'toMatchObject';
+        expect(doublyLinkedList.length).toBe(lengthBefore);
+        expect(doublyLinkedList.pop())[method](node);
+        expect(doublyLinkedList.length).toBe(lengthAfter);
+      },
+    );
   });
 
   test('shift', () => {
@@ -73,7 +76,11 @@ describe('Doubly Linked List', () => {
   });
 
   describe('get', () => {
-    const doublyLinkedList = DoublyLinkedList.fromValues('John', 'Rick', 'Terrence');
+    const doublyLinkedList = DoublyLinkedList.fromValues(
+      'John',
+      'Rick',
+      'Terrence',
+    );
 
     test('when passing a valid index', () => {
       let node = doublyLinkedList.get(2);
@@ -99,13 +106,21 @@ describe('Doubly Linked List', () => {
     });
 
     test('when passing an invalid index like -2 or >= list length', () => {
-      expect(() => doublyLinkedList.get(-2)).toThrow('index: -2 is out of bounds');
-      expect(() => doublyLinkedList.get(4)).toThrow('index: 4 is out of bounds');
+      expect(() => doublyLinkedList.get(-2)).toThrow(
+        'index: -2 is out of bounds',
+      );
+      expect(() => doublyLinkedList.get(4)).toThrow(
+        'index: 4 is out of bounds',
+      );
     });
   });
 
   describe('insert', () => {
-    const doublyLinkedList = DoublyLinkedList.fromValues('Austin', 'Dallas', 'El Paso');
+    const doublyLinkedList = DoublyLinkedList.fromValues(
+      'Austin',
+      'Dallas',
+      'El Paso',
+    );
 
     test('when inserting at valid index', () => {
       expect(doublyLinkedList.length).toBe(3);
@@ -134,12 +149,18 @@ describe('Doubly Linked List', () => {
     });
 
     test('when index is not valid', () => {
-      expect(() => doublyLinkedList.insert(5, 'San Antonio')).toThrow('index: 5 is out of bounds');
+      expect(() => doublyLinkedList.insert(5, 'San Antonio')).toThrow(
+        'index: 5 is out of bounds',
+      );
     });
   });
 
   describe('remove', () => {
-    const doublyLinkedList = DoublyLinkedList.fromValues('John', 'Homer', 'Paul');
+    const doublyLinkedList = DoublyLinkedList.fromValues(
+      'John',
+      'Homer',
+      'Paul',
+    );
 
     test('when removing with a valid index', () => {
       const toRemove = { value: 'Homer' };
@@ -151,7 +172,9 @@ describe('Doubly Linked List', () => {
     });
 
     test('when index is not valid', () => {
-      expect(() => doublyLinkedList.remove(5)).toThrow('index: 5 is out of bounds');
+      expect(() => doublyLinkedList.remove(5)).toThrow(
+        'index: 5 is out of bounds',
+      );
     });
   });
 });

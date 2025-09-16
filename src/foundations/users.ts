@@ -10,7 +10,7 @@ export interface User {
     city: string;
     state: string;
     postcode: number | string;
-  },
+  };
   username: string;
   password: string;
   first_name: string;
@@ -24,13 +24,19 @@ export interface Range {
   max: number;
 }
 
-const isOfGender = ({ gender }: User, wantedGender: string) => gender === wantedGender;
-const capitalizeWords = (...words: string[]) => words.map((word) => capitalize(word));
+const isOfGender = ({ gender }: User, wantedGender: string) =>
+  gender === wantedGender;
+const capitalizeWords = (...words: string[]) =>
+  words.map((word) => capitalize(word));
 
 export const isMale = (user: User) => isOfGender(user, 'male');
 export const isFemale = (user: User) => isOfGender(user, 'female');
 
-export const getFullName = ({ first_name: first, last_name: last, title }: User) => ({
+export const getFullName = ({
+  first_name: first,
+  last_name: last,
+  title,
+}: User) => ({
   fullName: capitalizeWords(title, first, last).join(' '),
 });
 export const getAddress = ({ location }: User) => ({
@@ -44,7 +50,8 @@ export const getAddress = ({ location }: User) => ({
     })
     .join(', '),
 });
-export const mockSalary = ({ min, max }: Range) => Math.ceil(Math.random() * (max - min) + min);
+export const mockSalary = ({ min, max }: Range) =>
+  Math.ceil(Math.random() * (max - min) + min);
 
 export const users: User[] = [
   {

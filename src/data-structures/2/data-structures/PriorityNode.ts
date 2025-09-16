@@ -5,5 +5,8 @@ export enum PriorityLevel {
 }
 
 export class PriorityNode {
-  public constructor(public value: number, public priority: PriorityLevel) {}
+  public constructor(
+    public value: number,
+    public priority: PriorityLevel,
+  ) {}
 }

@@ -27,8 +27,8 @@ describe('buildPredicate', () => {
       },
     ],
     [
-      '(status == $0 AND (category == $1 OR category == $2) AND date > $3) '
-       + 'DISTINCT(name) SORT(name DESC) LIMIT(1000)',
+      '(status == $0 AND (category == $1 OR category == $2) AND date > $3) ' +
+        'DISTINCT(name) SORT(name DESC) LIMIT(1000)',
       {
         operator: 'AND',
         limit: 1000,

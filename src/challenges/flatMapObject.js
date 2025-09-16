@@ -91,6 +91,6 @@ const collection = [
   },
 ];
 
-const flatten = collection.flatMap(item => [item, item.location]);
+const flatten = collection.flatMap((item) => [item, item.location]);
 
 console.log({ flatten });

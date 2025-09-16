@@ -7,9 +7,7 @@ class Borrower {
 
   #clientYears;
 
-  constructor({
-    name, creditScore, isEmployed = false, clientYears = 0,
-  }) {
+  constructor({ name, creditScore, isEmployed = false, clientYears = 0 }) {
     this.#name = name;
     this.#creditScore = creditScore;
     this.#isEmployed = isEmployed;

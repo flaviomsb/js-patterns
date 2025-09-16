@@ -4,9 +4,12 @@
  * @returns {string}
  */
 export default function capitalize(str: string): string {
-  return str.split(/\s/).map((word) => {
-    if (word.length === 1) return word.toUpperCase();
+  return str
+    .split(/\s/)
+    .map((word) => {
+      if (word.length === 1) return word.toUpperCase();
 
-    return word[0].toUpperCase().concat(word.substring(1));
-  }).join(' ');
+      return word[0].toUpperCase().concat(word.substring(1));
+    })
+    .join(' ');
 }

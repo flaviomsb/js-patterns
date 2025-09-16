@@ -16,7 +16,7 @@ describe('Tree', () => {
     tree.root.add('c');
     tree.root.children[0].add('d');
 
-    tree.traverseBF(node => {
+    tree.traverseBF((node) => {
       letters.push(node.data);
     });
 
@@ -31,7 +31,7 @@ describe('Tree', () => {
     tree.root.add('d');
     tree.root.children[0].add('c');
 
-    tree.traverseDF(node => {
+    tree.traverseDF((node) => {
       letters.push(node.data);
     });
 

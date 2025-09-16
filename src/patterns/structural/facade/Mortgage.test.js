@@ -12,7 +12,9 @@ describe('Facade pattern', () => {
     });
     const mortgage = new Mortgage(borrower);
 
-    expect(mortgage.applyFor(175_000)).toEqual('John Doe has been approved for a $175,000.00 mortgage');
+    expect(mortgage.applyFor(175_000)).toEqual(
+      'John Doe has been approved for a $175,000.00 mortgage',
+    );
   });
 
   test('Mortgage denied', () => {
@@ -24,6 +26,8 @@ describe('Facade pattern', () => {
     });
     const mortgage = new Mortgage(borrower);
 
-    expect(mortgage.applyFor(350_000)).toEqual('Jesse Doe has been denied for a $350,000.00 mortgage');
+    expect(mortgage.applyFor(350_000)).toEqual(
+      'Jesse Doe has been denied for a $350,000.00 mortgage',
+    );
   });
 });

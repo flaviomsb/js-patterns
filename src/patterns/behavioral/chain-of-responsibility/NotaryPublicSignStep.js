@@ -7,8 +7,7 @@ class NotaryPublicSignStep extends ContractSignStep {
   }
 
   handle() {
-    this.contract
-      .addSignature({ notary: this.notary });
+    this.contract.addSignature({ notary: this.notary });
     super.handle();
   }
 }

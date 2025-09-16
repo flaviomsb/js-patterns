@@ -52,8 +52,10 @@ export class PriorityQueue {
 
     if (rightChildIndex < length) {
       if (
-        (swapIndex === null && this.nodes[rightChildIndex].priority < element.priority) ||
-        (swapIndex !== null && this.nodes[rightChildIndex].priority < this.nodes[swapIndex].priority)
+        (swapIndex === null &&
+          this.nodes[rightChildIndex].priority < element.priority) ||
+        (swapIndex !== null &&
+          this.nodes[rightChildIndex].priority < this.nodes[swapIndex].priority)
       ) {
         swapIndex = rightChildIndex;
       }

@@ -68,9 +68,7 @@ class HashTable {
      * }
      * return allKeys;
      */
-    return this.dataMap
-      .filter(Boolean)
-      .map((val) => val[0][0]);
+    return this.dataMap.filter(Boolean).map((val) => val[0][0]);
   }
 
   /**
@@ -91,7 +89,8 @@ class HashTable {
     return key
       .split('')
       .reduce(
-        (prev, current) => ((prev + current.charCodeAt() * 23) % this.dataMap.length),
+        (prev, current) =>
+          (prev + current.charCodeAt() * 23) % this.dataMap.length,
         0,
       );
   }

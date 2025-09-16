@@ -1,6 +1,9 @@
 import Queue from '../queue/Queue';
 
-export default function weave<T>(queueOne: Queue<T>, queueTwo: Queue<T>): Queue<T> {
+export default function weave<T>(
+  queueOne: Queue<T>,
+  queueTwo: Queue<T>,
+): Queue<T> {
   const queue = new Queue<T>();
 
   while (queueOne.peek() || queueTwo.peek()) {

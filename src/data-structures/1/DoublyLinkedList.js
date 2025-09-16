@@ -25,9 +25,9 @@ class DoublyLinkedList extends LinkedList {
   }
 
   /**
-  * Remove the last node from the list
-  * @returns {(NodeNextPrev|undefined)}
-  */
+   * Remove the last node from the list
+   * @returns {(NodeNextPrev|undefined)}
+   */
   pop() {
     if (!this.head) return undefined;
 
@@ -91,11 +91,11 @@ class DoublyLinkedList extends LinkedList {
   }
 
   /**
-  * Return the node for the given index number
-  * @param {number} index
-  * @returns {(NodeNextPrev|undefined)}
-  * @throws {Error}
-  */
+   * Return the node for the given index number
+   * @param {number} index
+   * @returns {(NodeNextPrev|undefined)}
+   * @throws {Error}
+   */
   get(index) {
     this.validateIndex(index);
 
@@ -112,12 +112,12 @@ class DoublyLinkedList extends LinkedList {
   }
 
   /**
-  * Insert a new node at the given index
-  * @param {number} index
-  * @param {*} value
-  * @returns {LinkedList}
-  * @throws {Error}
-  */
+   * Insert a new node at the given index
+   * @param {number} index
+   * @param {*} value
+   * @returns {LinkedList}
+   * @throws {Error}
+   */
   insert(index, value) {
     this.validateIndex(index);
 

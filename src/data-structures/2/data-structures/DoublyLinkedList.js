@@ -140,7 +140,8 @@ export class DoublyLinkedList {
         current = current.next;
         count++;
       }
-    } else { // This means index is on the second half of the list
+    } else {
+      // This means index is on the second half of the list
       count = this.length - 1;
       current = this.tail;
 
@@ -273,7 +274,8 @@ export class DoublyLinkedList {
   }
 
   toString() {
-    let index = 0, current = this.head;
+    let index = 0,
+      current = this.head;
     const values = [current.value];
 
     while (index !== this.length - 1) {

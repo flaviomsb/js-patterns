@@ -5,7 +5,7 @@ class PriorityQueue {
 
   enqueue(...newItems) {
     newItems.forEach((newItem) => {
-      if ((!(newItem instanceof PriorityItem))) {
+      if (!(newItem instanceof PriorityItem)) {
         throw new Error(`cannot read priority from item: ${newItem}`);
       }
 

@@ -1,4 +1,3 @@
-
 export default function memoize(func: (arg: number) => number) {
   const cache: { [key: number]: number } = {};
 
