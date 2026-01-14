@@ -5,6 +5,7 @@
   "main": "index.js",
   "scripts": {
     "test": "jest",
+    "test:coverage": "jest --coverage",
     "test:watch": "jest --watch",
     "lint": "eslint --cache --format table src",
     "lint:fix": "eslint --fix --cache --ext .js,.ts,.jsx,.json --format table src",
