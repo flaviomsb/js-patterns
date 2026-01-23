@@ -42,7 +42,7 @@
   "dependencies": {
     "@tensorflow/tfjs": "^4.22.0",
     "express": "^5.2.1",
-    "globals": "^17.0.0",
+    "globals": "^17.1.0",
     "lodash.capitalize": "^4.2.1"
   },
   "prettier": {
