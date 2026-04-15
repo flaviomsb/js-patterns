@@ -34,10 +34,7 @@ describe('monotonic-queue', () => {
 
   describe('createMonotonicDecreasingQueue', () => {
     test.each([
-      [
-        [8],
-        [7, 5, 6, 4, 8],
-      ],
+      [[8], [7, 5, 6, 4, 8]],
       [
         [12, 10],
         [9, 3, 12, 8, 7, 10],
