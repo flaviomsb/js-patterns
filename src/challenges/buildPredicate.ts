@@ -1,14 +1,6 @@
 export type SortDirection = 'ASC' | 'DESC';
 export type ComparisonOperator =
-  | '='
-  | '=='
-  | '>'
-  | '>='
-  | '<'
-  | '<='
-  | '!='
-  | '<>'
-  | 'IN';
+  '=' | '==' | '>' | '>=' | '<' | '<=' | '!=' | '<>' | 'IN';
 export type SingleCondition = [string, ComparisonOperator, any, boolean?];
 
 export interface LogicalCondition {
