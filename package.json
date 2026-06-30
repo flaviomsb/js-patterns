@@ -30,7 +30,7 @@
     "babel-jest": "^30.4.1",
     "eslint": "^9.39.2",
     "eslint-plugin-import": "^2.32.0",
-    "eslint-plugin-jest": "^29.15.3",
+    "eslint-plugin-jest": "^29.15.4",
     "eslint-plugin-prettier": "^5.5.6",
     "jest": "^30.4.2",
     "prettier": "^3.9.3",
@@ -46,5 +46,10 @@
   },
   "prettier": {
     "singleQuote": true
+  },
+  "allowScripts": {
+    "core-js@3.29.1": true,
+    "fsevents@2.3.3": true,
+    "unrs-resolver@1.11.1": true
   }
 }
