@@ -8,7 +8,7 @@ import swap from './swap';
  */
 export default function selectionSort(arr) {
   const newArr = [...arr];
-  let min = 0; // index of minimum value
+  let min;
 
   for (let i = 0; i < newArr.length - 1; i++) {
     min = i;

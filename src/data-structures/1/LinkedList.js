@@ -193,7 +193,7 @@ class LinkedList {
     let temp = this.head;
     this.head = this.tail;
     this.tail = temp;
-    let { next } = temp;
+    let next;
     let prev = null;
 
     for (let i = 0; i < this.length; i++) {
