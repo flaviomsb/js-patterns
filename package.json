@@ -19,7 +19,7 @@
   "license": "MIT",
   "devDependencies": {
     "@eslint/js": "^10.0.1",
-    "@jest/globals": "^30.5.1",
+    "@jest/globals": "^30.5.2",
     "@swc/core": "^1.16.2",
     "@swc/jest": "^0.2.39",
     "@types/jest": "^30.0.0",
