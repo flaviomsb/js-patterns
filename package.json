@@ -32,7 +32,7 @@
     "jest": "^30.5.2",
     "prettier": "^3.9.9",
     "typescript": "^6.0.3",
-    "typescript-eslint": "^8.70.0"
+    "typescript-eslint": "^8.70.1"
   },
   "dependencies": {
     "@tensorflow/tfjs": "^4.22.0",
