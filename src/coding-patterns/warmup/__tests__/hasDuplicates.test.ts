@@ -13,4 +13,3 @@ describe('hasDuplicates', () => {
     expect(hasDuplicates(numbers)).toBe(expectedDuplicates);
   });
 });
-

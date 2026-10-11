@@ -20,7 +20,7 @@ export function reverseVowels(str: string): string {
   // The first and last pointers are initialized to the start and end of the string, respectively
   let first = 0;
   let last = str.length - 1;
-  // Turn the input string 's' to a character array 'array' 
+  // Turn the input string 's' to a character array 'array'
   // to allow easy manipulation of individual characters
   const strArray = str.split('');
 

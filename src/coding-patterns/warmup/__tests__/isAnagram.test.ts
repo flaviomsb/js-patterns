@@ -13,10 +13,7 @@ describe('isAnagram', () => {
     ['One one', 'One one c', false],
     ['aabbcc', 'aabbbc', false],
     ['A tree, a life, a bench', 'A tree, a fence, a yard', false],
-  ])(
-    'check %s and %s with isAnagram returns %s',
-    (str1, str2, expected) => {
-      expect(isAnagram(str1, str2)).toBe(expected);
-    },
-  );
+  ])('check %s and %s with isAnagram returns %s', (str1, str2, expected) => {
+    expect(isAnagram(str1, str2)).toBe(expected);
+  });
 });
