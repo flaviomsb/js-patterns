@@ -32,7 +32,7 @@
     "jest": "^30.5.2",
     "prettier": "^3.9.10",
     "typescript": "^6.0.3",
-    "typescript-eslint": "^8.71.1"
+    "typescript-eslint": "^8.71.2"
   },
   "dependencies": {
     "globals": "^17.13.0",
