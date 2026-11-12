@@ -1,4 +1,8 @@
-export default function shortestDistance(words: string[], w1: string, w2: string): number {
+export default function shortestDistance(
+  words: string[],
+  w1: string,
+  w2: string,
+): number {
   if (!w1 || !w2 || !words.includes(w1) || !words.includes(w2)) {
     return 0;
   }
